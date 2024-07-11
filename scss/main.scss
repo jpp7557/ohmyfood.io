@@ -1,0 +1,316 @@
+@import './resets';
+//@import './palette';
+
+/*
+// Variables
+$primary-color: #9356dc;
+$secondary-color: #ff79da;
+$accent-color: #99e2d0;
+$background-color: white;
+$main-bg-color: #f2f2f2;
+$breakpoint-sm: 600px;
+$breakpoint-lg: 900px;
+
+//font
+$font-primary: 'Roboto', sans-serif;
+$base-font-size: 16px;
+$base-line-height: 1.5;
+$base-spacing: 40px;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+//padding
+$usual-spacing : 5vw;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin affiche-icone-text {
+
+  .icntext {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline; 
+    background-color: rgba(240, 240, 240, 0.692);
+    border-radius: 20px;
+    box-shadow: 0 -0.3em 1em 0.2em  #e7e7e79d,
+                0 0.3em 0.5em 0.1em  #d7d9db9d;
+    padding : 5px 10vw;
+    width : 90vw;
+
+    h3 {
+      font-size: 1rem;
+      margin: 20px 0;
+      padding: 0 0 0 $usual_spacing;
+    }
+  }  
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: $breakpoint-lg) { @content; }
+  }
+  @else if $breakpoint == large {
+    @media (min-width: calc($breakpoint-lg + 1px)) { @content; }
+  }
+}
+
+// Global styles
+body {
+  font-family: $font-primary;
+  font-size: $base-font-size;
+  font-weight: $font-weight-regular;
+  line-height: $base-line-height;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: $background-color;
+}
+
+*/
+
+
+// Header
+
+header {
+    margin: 0.5rem 0 0 0;
+    @include flex-center;
+    flex-direction: column;
+    border: none;
+
+  .logo {
+    margin: 1rem 0;
+    img {
+      width: 10rem;
+      height: auto;
+    }
+  }
+  .localite-container {
+    box-sizing: content-box;
+    width: calc(100% - 1rem);
+    padding: 0.8rem;
+    background-color: $main-bg-color;
+    @include flex-center;
+    flex-direction: row;
+    margin:0 auto;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 0.1em 0.5em 0.1em  #e0e0e0;
+
+    .form {
+        width: 15rem;
+        padding-left: 8vw;
+    }
+    .input {
+        width: 60%;
+        font-size: 16px;
+        font-size: max(16px, 1em);
+        font-family: inherit;
+        text-align: center;
+        padding: 0.25em 0em;
+        background-color: $main-bg-color;
+        border: none;
+        //border: 2px solid #ee07ee;
+        border-radius: 4px;
+        margin-left: 1vw;
+    }
+  }
+
+}
+.pub {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.2;
+    justify-content: space-between;
+    background-color: $main-bg-color;
+    //margin: 0 0 0 0;
+    padding: 20px 0 40px 0;
+    border: none;
+    
+    h1 {
+        font-size: calc(1.2vw + 1.2vh + 0.4vmin); /* rajout */
+        letter-spacing: 0.1vw;
+        color: #030303;
+        padding: 0.5rem 4rem;
+
+        @include respond-to(small) {
+            font-size: 1.4rem;
+          }    
+
+    }
+    h2 {
+        font-size: 1.1rem;
+        color: #838181;
+        font-weight:lighter;
+        padding: 0.5rem 1rem;
+    }
+
+    .exploration {
+        width: fit-content;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        padding: 16px 16px;
+        font-weight: bolder;
+        margin: 20px 0 10px 0;
+        color: white;
+        background-image: linear-gradient(180deg, $secondary-color , #771bb4f3);
+        //box-shadow: 3px 3px .4em red, -1em 0 .4em olive;
+        box-shadow: 0px 3px .4em #5e0452f3;
+        text-decoration: none;
+
+        &:hover {
+          opacity: 0.8;
+        };
+      }
+
+    
+}
+// section fonctionnement
+.fonctionnement {
+  margin : 20px $usual_spacing;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;;
+  }
+    .etape {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 25px;
+      align-items: baseline;
+    }
+
+  @include  affiche-icone-text;
+
+      .fa-mobile-screen-button,
+      .fa-list,
+      .fa-store {
+        font-size: 5vw;
+        color: #838181;
+      }
+
+    p.num {
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #7e2ea3ce;
+      border-radius: 20px;
+      color : white;
+      font-size: 0.8rem;
+      padding: 2px 0 0 8px;
+      margin: 0;
+      margin-left: -92vw;
+    }
+    
+}
+
+// section sec-restaurants
+.sec-restaurants {
+  //display:flex;
+  //flex-direction: column;
+  padding: $base-spacing 0 $usual-spacing $usual_spacing;
+  background-color: #f5f7fac4;
+
+  h2 {
+    margin: 0;
+    padding-bottom: $usual-spacing;
+  }
+
+  .restaurant {
+    align-items: left;
+
+    @include respond-to(small) {
+      width: calc(100% - $usual_spacing);
+    }
+    @include respond-to(large) {
+      display :flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 5vw;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+
+      &:hover img {
+        opacity: 0.8;
+      }
+
+      img { 
+        width: 100%;
+        height: 50vw;
+        object-fit: cover;
+        border-radius: 1rem 1rem 0 0;
+        margin-left: 0;
+        transition: opacity 0.3s ease-in-out;
+        
+        @include respond-to(large) {
+          height: 20vw;
+        }
+      }
+    }
+
+    h3 {
+      margin: 0 ;
+    }
+
+    .restaurant-item {
+
+      @include respond-to(large) {
+        width: 42vw;
+      }
+
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 1rem;
+      padding: 0px 0 10px 0;
+      margin-bottom: $usual-spacing;
+      box-shadow: 0 2px 4px rgba(212, 211, 211, 0.1);
+      border: none;
+      width: 100%;
+      height: auto;
+      text-align: left;      
+
+      .card-txt {
+        padding-left: 3vw;
+      }
+    }
+
+  }
+}
+
+// Footer
+footer {
+  background-color: #464444;
+  color: white;
+  padding: $usual-spacing $usual-spacing;
+  text-align: left;
+  
+  img {
+    height: 1.5rem;
+    filter: invert(100%)
+  }
+
+  .f-icntext {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline; 
+    padding : 0;
+
+    h3 {
+      font-size: 1rem;
+      margin: 2px 0;
+      padding: 0 0 0 2vw;
+    }
+  }
+}
