@@ -1,82 +1,8 @@
-@import './resets';
+@import './global';
 //@import './palette';
-
-/*
-// Variables
-$primary-color: #9356dc;
-$secondary-color: #ff79da;
-$accent-color: #99e2d0;
-$background-color: white;
-$main-bg-color: #f2f2f2;
-$breakpoint-sm: 600px;
-$breakpoint-lg: 900px;
-
-//font
-$font-primary: 'Roboto', sans-serif;
-$base-font-size: 16px;
-$base-line-height: 1.5;
-$base-spacing: 40px;
-$font-weight-regular: 400;
-$font-weight-medium: 500;
-$font-weight-bold: 700;
-
-//padding
-$usual-spacing : 5vw;
-
-// Mixins
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin affiche-icone-text {
-
-  .icntext {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline; 
-    background-color: rgba(240, 240, 240, 0.692);
-    border-radius: 20px;
-    box-shadow: 0 -0.3em 1em 0.2em  #e7e7e79d,
-                0 0.3em 0.5em 0.1em  #d7d9db9d;
-    padding : 5px 10vw;
-    width : 90vw;
-
-    h3 {
-      font-size: 1rem;
-      margin: 20px 0;
-      padding: 0 0 0 $usual_spacing;
-    }
-  }  
-}
-
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == small {
-    @media (max-width: $breakpoint-lg) { @content; }
-  }
-  @else if $breakpoint == large {
-    @media (min-width: calc($breakpoint-lg + 1px)) { @content; }
-  }
-}
-
-// Global styles
-body {
-  font-family: $font-primary;
-  font-size: $base-font-size;
-  font-weight: $font-weight-regular;
-  line-height: $base-line-height;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  background-color: $background-color;
-}
-
-*/
 
 
 // Header
-
 header {
     margin: 0.5rem 0 0 0;
     @include flex-center;

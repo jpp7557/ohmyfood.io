@@ -22,30 +22,83 @@
         </div>
     </header>
     <main>
-            <img src="./restaurants/jay-wennington.jpg" alt="jay-wennington"/>
+        <img src="./restaurants/jay-wennington.jpg" alt="jay-wennington"/>
+        <div class="order-button">
+            <input type="checkbox" id="orderbutton" class="order-checkbox">
             <div class="menu-txt">
-                <div class="enligne nom-et-coeur">
+                <div class="nom-et-coeur">
                     <h1>La palette du goût</h1>
-                    <i class="fa-solid fa-heart fa-lg"></i>
+                    <i class="fa-regular fa-heart specifique"></i>
                 </div>
                 <p><span class="underline">ENTR</span>EES</p>
-                <div class="choix">
-                    <h2>Fricassée d'escargots</h2>
-                    <div class="enligne plat-prix">
-                        <p>Au piment d'Espelette</p>
-                        <p>25€</p>
-                    </div>
+                <div class="enligne choix-et-check">
+                    <div class="enligne choix">
+                        <input type="checkbox" name="plat" id="fricasse" class="checkbox-input"/>
+                        <label for="fricasse" class="label enligne">
+                            <div class="checkbox-text">
+                                <h2 class="checkbox-text--title">Fricassée d'escargots</h2>
+                                <div class="checkbox-text--description">Au piment d'Espelette</div>
+                            </div>
+                            <div class="prix">25€</div>
+                            <div class="enligne icbox">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </label>
+                    </div>                
                 </div>
-                <div class="choix">
-                    <h2>Foie gras de canard mi-cuit</h2>
-                    <div class="enligne plat-prix">
-                        <p>Et ses copeaux de truffe noire</p>
-                        <p>35€</p>
-                    </div>
+                <div class="enligne choix-et-check">
+                    <div class="enligne choix">
+                        <input type="checkbox" name="plat" id="foie" class="checkbox-input"/>
+                        <label for="foie" class="enligne label">
+                            <div class="checkbox-text">
+                                <h2 class="checkbox-text--title">Foie gras de canard mi-cuit</h2>
+                                <div class="checkbox-text--description">Et ses copeaux de truffe noire</div>                                </div>
+                            <span class="prix">35€</span>
+                            <div class="enligne icbox">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </label>
+                    </div>                
                 </div>
-
-
-            </div>    
+                <p><span class="underline">PLAT</span>S</p>
+                <div class="enligne choix-et-check">
+                    <div class="enligne choix">
+                        <input type="checkbox" name="plat" id="boeuf" class="checkbox-input"/>
+                        <label for="boeuf" class="enligne label">
+                            <div class="checkbox-text">
+                                <h2 class="checkbox-text--title">Filet de boeuf aux herbes</h2>
+                                <div class="checkbox-text--description">
+                                    Accompagné de ses ribambelles de légumes
+                                </div>
+                            </div>
+                            <span class="prix">40€</span>
+                            <div class="enligne icbox">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </label>
+                    </div>                
+                </div>
+                <p><span class="underline">DESSE</span>RTS</p>
+                <div class="enligne choix-et-check">
+                    <div class="enligne choix">
+                        <input type="checkbox" name="plat" id="paris-brest" class="checkbox-input"/>
+                        <label for="paris-brest" class="enligne label">
+                            <div class="checkbox-text">
+                                <h2 class="checkbox-text--title">Paris-Brest</h2>
+                                <div class="checkbox-text--description">Revisité</div>
+                            </div>
+                            <span class="prix">18€</span>
+                            <div class="enligne icbox">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </label>
+                    </div>                
+                </div>
+            </div>
+            <label for="orderbutton" class="orderlabel">
+                <span class="ordername">Commander</span>
+            </label>    
+        </div>  
 
     </main>
 </body>
