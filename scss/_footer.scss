@@ -1,0 +1,49 @@
+@import './global';
+
+// Footer
+footer {
+    background-color: #464444;
+    color: white;
+    padding: calc(2*$horizon_spacing) $horizon_spacing;
+    text-align: left;
+    
+    img {
+      height: 1.5rem;
+      filter: invert(100%)
+    }
+  
+    .f-icntext {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline; 
+      padding : 0;
+      margin:0;
+  
+      h3 {
+        font-size: 1rem;
+        margin: 2px 0;
+        padding: 0 0 0 2vw;
+      }
+    }
+
+    @media (min-width: 1000px) {
+        display: flex;
+        flex-direction: row;
+        padding: 5rem;
+        padding-left: 30vw;
+        img {
+            height: 1.2rem;
+            position: absolute;
+            right: 3rem;
+        }
+        p, h3.titre {
+            font-size: 0.9rem;
+            padding: 0;
+            margin:0;
+        }
+        .f-icntext {            
+            gap: 0.3rem;
+        }    
+        gap : 1rem;
+      }  
+  }
