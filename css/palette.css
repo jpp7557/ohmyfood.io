@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand:wght@400;500;700&display=swap");
 * {
   box-sizing: border-box;
@@ -19,15 +20,75 @@ body {
 
 * {
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+footer {
+  background-color: #464444;
+  color: white;
+  padding: 10vw 5vw;
+  text-align: left;
+}
+footer img {
+  height: 1.5rem;
+  filter: invert(100%);
+}
+footer .f-icntext {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 0;
+  margin: 0;
+}
+footer .f-icntext h3 {
+  font-size: 1rem;
+  margin: 2px 0;
+  padding: 0 0 0 2vw;
+}
+@media (min-width: 1000px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    padding: 5rem;
+    padding-left: 30vw;
+    gap: 1rem;
+  }
+  footer img {
+    height: 1.2rem;
+    position: absolute;
+    right: 3rem;
+  }
+  footer p, footer h3.titre {
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 0;
+  }
+  footer .f-icntext {
+    gap: 0.3rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
 }
 
 header {
   display: flex;
   flex-direction: row;
   margin: 0.5rem 0 0 0;
-  padding: 5vw;
+  padding: 2.5vw 0 2.5vw 2.5vw;
   border: none;
 }
 header .logo {
@@ -44,18 +105,37 @@ main {
 }
 main img {
   width: 100%;
-  height: 70vw;
   object-fit: cover;
   border-radius: 1rem 1rem 0 0;
   margin: 0;
   padding: 0;
+  height: 20rem;
+}
+@media (min-width: 600px) {
+  main img {
+    height: 30rem;
+  }
+}
+@media (min-width: 1024px) {
+  main img {
+    height: 35rem;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
 }
 main .order-button {
-  width: 100%;
+  max-width: 1024px;
   display: flex;
   flex-direction: column;
-  padding: 0;
-  /* Tablet specific styling */
+  margin: 0;
+  padding-bottom: 40px;
+  background-color: #f2f2f2;
+}
+@media (min-width: 1024px) {
+  main .order-button {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 main .order-button .order-checkbox {
   display: none;
@@ -72,8 +152,9 @@ main .order-button .orderlabel {
   cursor: pointer;
   width: fit-content;
   padding: 10px 40px;
-  margin-left: calc(50vw - 5rem);
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 50px;
   color: white;
   background-color: #c91ec9;
@@ -91,62 +172,83 @@ main .order-button .orderlabel .ordername {
   flex-grow: 1;
   font-size: 18px;
 }
-@media (min-width: 601px) and (max-width: 1440px) {
-  main .order-button .section {
-    width: 95%;
-  }
-}
-main .menu-txt {
+main .order-button .menu-txt {
   padding: 0 5vw;
   background-color: #f2f2f2;
   margin-top: -50px;
   z-index: 1;
   border-radius: 40px;
 }
-main .menu-txt h1 {
+@media (min-width: 1024px) {
+  main .order-button .menu-txt {
+    width: 100%;
+    max-width: 1025px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 184px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+  main .order-button .menu-txt {
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 70px;
+  }
+}
+main .order-button .menu-txt h1 {
   margin-top: 20px;
   font-family: shrikhand;
   font-size: 1.5rem;
 }
-main .menu-txt h2 {
+main .order-button .menu-txt h2 {
   font-size: 1rem;
 }
-main .menu-txt .enligne {
+main .order-button .menu-txt .enligne {
   padding: 0;
+  margin: 0;
   align-items: baseline;
   display: flex;
   flex-direction: row;
 }
-main .menu-txt .nom-et-coeur {
+main .order-button .menu-txt .nom-et-coeur {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 20px;
 }
-main .menu-txt .fa-heart {
+@media (min-width: 1024px) {
+  main .order-button .menu-txt .nom-et-coeur {
+    justify-content: center;
+    gap: 32px;
+  }
+}
+main .order-button .menu-txt .fa-heart {
   height: 1rem;
   transition: background-color 1s;
 }
-main .menu-txt .choix-et-check {
+main .order-button .menu-txt .choix-et-check {
   margin: 0;
   padding: 0;
   width: 100%;
   align-items: last baseline;
 }
-main .menu-txt .choix {
+main .order-button .menu-txt .choix {
   background-color: white;
   border-radius: 20px;
-  padding: 0px 0vw 0 0vw;
-  margin: 5vw 0;
+  padding: 0;
+  margin: 8px 0;
   width: 100%;
 }
-main .menu-txt .underline {
+main .order-button .menu-txt .underline {
+  margin-top: 16px;
   border-bottom: 4px solid #b1f59c;
   display: inline-block;
   line-height: 2;
 }
-main .prix {
+main .order-button .prix {
   font-size: 1rem;
   position: absolute;
   padding: 0;
@@ -157,23 +259,22 @@ main .prix {
   transition: transform 0.8s ease;
   opacity: 1;
 }
-main .icbox {
+main .order-button .icbox {
   position: absolute;
   font-size: 1rem;
-  top: -1px;
+  top: 0;
   right: 0rem;
   width: 5rem;
-  height: 4rem;
+  height: 64px;
   margin: 0;
   padding: 5px 0px 10px 10px;
   background-color: rgba(123, 197, 202, 0.8980392157);
   border-radius: 0 20px 20px 0;
-  opacity: 1;
   transform: translate(0, 0) translateX(4.8rem);
   transition: transform 0.8s ease, opacity 0.8s ease;
   opacity: 0;
 }
-main .fa-check {
+main .order-button .fa-check {
   position: relative;
   top: 20px;
   right: 0px;
@@ -182,57 +283,91 @@ main .fa-check {
   padding: 0.2rem 0.2rem 0rem 0em;
   background-color: white;
   color: rgba(95, 240, 204, 0.8980392157);
-  width: 1.5em;
-  height: 1.5em;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   z-index: 1;
   transform: translate(0, 0) translateX(1rem);
   transition: transform 0.8s ease, opacity 0.8s ease;
   opacity: 0;
 }
-main .checkbox-input {
+main .order-button .checkbox-input {
   display: none;
 }
-main .checkbox-input:checked + .label .icbox {
-  transition: transform 0.8s ease, opacity 0.8s ease;
-  transform: translateX(0);
-  opacity: 0.7;
+@media (max-width: 700px) {
+  main .order-button .checkbox-input:checked + .label .icbox {
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    transform: translateX(0);
+    opacity: 0.7;
+  }
+  main .order-button .checkbox-input:checked + .label .fa-check {
+    transform: translate(0, 0) translateX(-0.2rem);
+    opacity: 1;
+  }
+  main .order-button .checkbox-input:checked + .label .prix {
+    transform: translate(0, 0) translateX(-5rem) translateY(0px);
+    transition: transform 0.8s ease;
+  }
+  main .order-button .checkbox-input:checked + .label .checkbox-text--description {
+    width: calc(75vw - 6rem);
+  }
 }
-main .checkbox-input:checked + .label .fa-check {
-  transform: translate(0, 0) translateX(-0.2rem);
-  opacity: 1;
+@media (min-width: 701px) {
+  main .order-button .checkbox-input:hover + .label .icbox {
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    transform: translateX(0);
+    opacity: 0.7;
+  }
+  main .order-button .checkbox-input:hover + .label .fa-check {
+    transform: translate(0, 0) translateX(-0.2rem);
+    opacity: 1;
+  }
+  main .order-button .checkbox-input:hover + .label .prix {
+    transform: translate(0, 0) translateX(-5rem) translateY(0px);
+    transition: transform 0.8s ease;
+  }
+  main .order-button .checkbox-input:hover + .label .checkbox-text--description {
+    width: calc(75vw - 6rem);
+  }
 }
-main .checkbox-input:checked + .label .prix {
-  transform: translate(0, 0) translateX(-5rem) translateY(0px);
-  transition: transform 0.8s ease;
-}
-main .checkbox-input:checked + .label .checkbox-text--description {
-  width: calc(75vw - 6rem);
-}
-main .label {
+main .order-button .label {
+  display: inline-block;
   vertical-align: top;
   position: relative;
   width: 100%;
-  height: 4rem;
+  height: 64px;
   cursor: pointer;
   border-radius: 2px;
 }
-main .checkbox-text--title {
+main .order-button .checkbox-text {
   width: 75vw;
+}
+main .order-button .checkbox-text--title {
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 5px 0 0 3vw;
   font-weight: 500;
 }
-main .checkbox-text--description {
-  width: 75vw;
+@media (min-width > 750px) {
+  main .order-button .checkbox-text--title {
+    width: 14vw;
+  }
+}
+main .order-button .checkbox-text--description {
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 2px 0 0 3vw;
   font-size: 1rem;
   transition: width 0.6s;
+}
+@media (min-width > 1024px) {
+  main .order-button .checkbox-text--description {
+    width: 14vw;
+  }
 }
 
 /* Flash animation */

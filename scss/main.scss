@@ -1,6 +1,42 @@
 @import './global';
 //@import './palette';
+@import './footer';
 
+
+@mixin affiche-icone-text {
+
+  .icntext {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline; 
+    background-color: rgba(240, 240, 240, 0.692);
+    border-radius: 20px;
+    box-shadow: 0 -0.3em 1em 0.2em  #e7e7e79d,
+                0 0.3em 0.5em 0.1em  #d7d9db9d;
+    padding : 5px 10vw;
+    width : 90vw;
+    @media (min-width:700px) {
+       max-width: 580px;
+       margin-left:auto;
+       margin-right: auto;
+    }
+    @media (min-width: $breakpoint-lg) {
+      width : 28vw;
+      padding : 10px 2vw;
+      gap : 20px;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin: 20px 0;
+      padding: 0 0 0 $horizon_spacing;
+      @media (min-width: $breakpoint-lg) {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }  
+}
 
 // Header
 header {
@@ -28,8 +64,9 @@ header {
     box-shadow: 0 0.1em 0.5em 0.1em  #e0e0e0;
 
     .form {
-        width: 15rem;
-        padding-left: 8vw;
+        width: fit-content;
+        padding-left: 2rem;
+        margin: 0 auto;
     }
     .input {
         width: 60%;
@@ -47,196 +84,191 @@ header {
   }
 
 }
-.pub {
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    line-height: 1.2;
-    justify-content: space-between;
-    background-color: $main-bg-color;
-    //margin: 0 0 0 0;
-    padding: 20px 0 40px 0;
-    border: none;
-    
-    h1 {
-        font-size: calc(1.2vw + 1.2vh + 0.4vmin); /* rajout */
-        letter-spacing: 0.1vw;
-        color: #030303;
-        padding: 0.5rem 4rem;
+main {
+    .pub {
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      line-height: 1.2;
+      justify-content: space-between;
+      background-color: $main-bg-color;
+      //margin: 0 0 0 0;
+      padding: 20px 0 40px 0;
+      border: none;
+      
+      h1 {
+          font-size: calc(1.2vw + 1.2vh + 0.4vmin); /* rajout */
+          letter-spacing: 0.1vw;
+          color: #030303;
+          padding: 0.5rem 4rem;
 
-        @include respond-to(small) {
-            font-size: 1.4rem;
-          }    
+          @include respond-to(small) {
+              font-size: 1.4rem;
+            }    
 
-    }
-    h2 {
-        font-size: 1.1rem;
-        color: #838181;
-        font-weight:lighter;
-        padding: 0.5rem 1rem;
-    }
-
-    .exploration {
-        width: fit-content;
-        border-radius: 50px;
-        font-size: 1.1rem;
-        padding: 16px 16px;
-        font-weight: bolder;
-        margin: 20px 0 10px 0;
-        color: white;
-        background-image: linear-gradient(180deg, $secondary-color , #771bb4f3);
-        //box-shadow: 3px 3px .4em red, -1em 0 .4em olive;
-        box-shadow: 0px 3px .4em #5e0452f3;
-        text-decoration: none;
-
-        &:hover {
-          opacity: 0.8;
-        };
+      }
+      h2 {
+          font-size: 1.1rem;
+          color: #838181;
+          font-weight:lighter;
+          padding: 0.5rem 1rem;
       }
 
-    
-}
-// section fonctionnement
-.fonctionnement {
-  margin : 20px $usual_spacing;
-  display: flex;
-  flex-direction: column;
+      .exploration {
+          width: fit-content;
+          border-radius: 50px;
+          font-size: 1.1rem;
+          padding: 16px 16px;
+          font-weight: bolder;
+          margin: 20px 0 10px 0;
+          color: white;
+          background-image: linear-gradient(180deg, $secondary-color , #771bb4f3);
+          //box-shadow: 3px 3px .4em red, -1em 0 .4em olive;
+          box-shadow: 0px 3px .4em #5e0452f3;
+          text-decoration: none;
 
-  h2 {
-    font-size: 1.4rem;
-    margin-bottom: 20px;;
+          &:hover {
+            opacity: 0.8;
+          };
+        }      
   }
-    .etape {
-      display: flex;
-      flex-direction: row;
-      margin-bottom: 25px;
-      align-items: baseline;
-    }
+  // section fonctionnement
+  .fonctionnement {
+    margin : 20px $vertical_spacing;
+    display: flex;
+    flex-direction: column;
 
-  @include  affiche-icone-text;
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;;
+    }
+    
+    .les-etapes {
+      @media (min-width : $breakpoint-lg) {
+        display: flex;
+        flex-direction: row;
+        //justify-content: space-around;
+        gap: 10px;
+        margin-left: 4vw;
+      }
+
+      .etape {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 25px;
+        align-items: baseline;
+
+        @media (min-width: $breakpoint-lg) {
+            width: 30%;
+        }
+
+      }
+
+      p.num {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: #7e2ea3ce;
+        border-radius: 20px;
+        color : white;
+        font-size: 0.8rem;
+        padding: 2px 0 0 8px;
+        //margin: 0;
+        //margin-left: px;
+        z-index: 1;
+        @media (min-width:700px) and (max-width: 999px) {
+          position:relative;
+          left: calc((100vw - 588px)/2);
+        }     
+      }
+      
+      @include  affiche-icone-text;
 
       .fa-mobile-screen-button,
       .fa-list,
       .fa-store {
-        font-size: 5vw;
-        color: #838181;
-      }
-
-    p.num {
-      width: 1.5rem;
-      height: 1.5rem;
-      background-color: #7e2ea3ce;
-      border-radius: 20px;
-      color : white;
-      font-size: 0.8rem;
-      padding: 2px 0 0 8px;
-      margin: 0;
-      margin-left: -92vw;
+          font-size: 1rem;
+          color: #838181;
+        }
     }
-    
-}
-
-// section sec-restaurants
-.sec-restaurants {
-  //display:flex;
-  //flex-direction: column;
-  padding: $base-spacing 0 $usual-spacing $usual_spacing;
-  background-color: #f5f7fac4;
-
-  h2 {
-    margin: 0;
-    padding-bottom: $usual-spacing;
   }
 
-  .restaurant {
-    align-items: left;
+  // section sec-restaurants
+  .sec-restaurants {
+    //display:flex;
+    //flex-direction: column;
+    padding: $base-spacing 0 $horizon_spacing $horizon_spacing;
+    background-color: #f5f7fac4;
 
-    @include respond-to(small) {
-      width: calc(100% - $usual_spacing);
+    h2 {
+      margin: 0;
+      padding-bottom: $vertical_spacing;
     }
-    @include respond-to(large) {
-      display :flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 5vw;
-    }
 
-    a {
-      display: block;
-      text-decoration: none;
-      color: inherit;
+    .restaurant {
+      align-items: left;
 
-      &:hover img {
-        opacity: 0.8;
+      @include respond-to(small) {
+        width: calc(100% - $horizon_spacing);
+      }
+      @include respond-to(large) {
+        display :flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5vw;
       }
 
-      img { 
-        width: 100%;
-        height: 50vw;
-        object-fit: cover;
-        border-radius: 1rem 1rem 0 0;
-        margin-left: 0;
-        transition: opacity 0.3s ease-in-out;
-        
-        @include respond-to(large) {
-          height: 20vw;
+      a {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+
+        &:hover img {
+          opacity: 0.8;
+        }
+
+        img { 
+          width: 100%;
+          height: 50vw;
+          object-fit: cover;
+          border-radius: 1rem 1rem 0 0;
+          margin-left: 0;
+          transition: opacity 0.3s ease-in-out;
+          
+          @include respond-to(large) {
+            height: 20vw;
+          }
         }
       }
-    }
 
-    h3 {
-      margin: 0 ;
-    }
-
-    .restaurant-item {
-
-      @include respond-to(large) {
-        width: 42vw;
+      h3 {
+        margin: 0 ;
       }
 
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 1rem;
-      padding: 0px 0 10px 0;
-      margin-bottom: $usual-spacing;
-      box-shadow: 0 2px 4px rgba(212, 211, 211, 0.1);
-      border: none;
-      width: 100%;
-      height: auto;
-      text-align: left;      
+      .restaurant-item {
 
-      .card-txt {
-        padding-left: 3vw;
+        @include respond-to(large) {
+          width: 42vw;
+        }
+
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 1rem;
+        padding: 0px 0 10px 0;
+        margin-bottom: $vertical_spacing;
+        box-shadow: 0 2px 4px rgba(212, 211, 211, 0.1);
+        border: none;
+        width: 100%;
+        height: auto;
+        text-align: left;      
+
+        .card-txt {
+          padding-left: 3vw;
+        }
       }
-    }
 
-  }
+    }
+  }  
 }
-
 // Footer
-footer {
-  background-color: #464444;
-  color: white;
-  padding: $usual-spacing $usual-spacing;
-  text-align: left;
-  
-  img {
-    height: 1.5rem;
-    filter: invert(100%)
-  }
-
-  .f-icntext {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline; 
-    padding : 0;
-
-    h3 {
-      font-size: 1rem;
-      margin: 2px 0;
-      padding: 0 0 0 2vw;
-    }
-  }
-}

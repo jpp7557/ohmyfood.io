@@ -30,6 +30,7 @@
                     <h1>La palette du goût</h1>
                     <i class="fa-regular fa-heart specifique"></i>
                 </div>
+                <!-- Entrées -->
                 <p><span class="underline">ENTR</span>EES</p>
                 <div class="enligne choix-et-check">
                     <div class="enligne choix">
@@ -52,7 +53,8 @@
                         <label for="foie" class="enligne label">
                             <div class="checkbox-text">
                                 <h2 class="checkbox-text--title">Foie gras de canard mi-cuit</h2>
-                                <div class="checkbox-text--description">Et ses copeaux de truffe noire</div>                                </div>
+                                <div class="checkbox-text--description">Et ses copeaux de truffe noire</div>
+                            </div>    
                             <span class="prix">35€</span>
                             <div class="enligne icbox">
                                 <i class="fa-solid fa-check"></i>
@@ -60,6 +62,22 @@
                         </label>
                     </div>                
                 </div>
+                <div class="enligne choix-et-check">
+                    <div class="enligne choix">
+                        <input type="checkbox" name="plat" id="oeuf" class="checkbox-input"/>
+                        <label for="oeuf" class="enligne label">
+                            <div class="checkbox-text">
+                                <h2 class="checkbox-text--title">Œuf au plat</h2>
+                                <div class="checkbox-text--description">Assaisonné à la truffe sur lit de caviar</div>
+                            </div>
+                            <span class="prix">20€</span>
+                            <div class="enligne icbox">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </label>
+                    </div>                
+                </div>
+                <!-- Plats -->
                 <p><span class="underline">PLAT</span>S</p>
                 <div class="enligne choix-et-check">
                     <div class="enligne choix">
@@ -78,6 +96,39 @@
                         </label>
                     </div>                
                 </div>
+                <div class="enligne choix-et-check">
+                    <div class="enligne choix">
+                        <input type="checkbox" name="plat" id="parmentier" class="checkbox-input"/>
+                        <label for="parmentier" class="enligne label">
+                            <div class="checkbox-text">
+                                <h2 class="checkbox-text--title">Parmentier de queue de bœuf</h2>
+                                <div class="checkbox-text--description">
+                                    À la truffe noire sur sa purée de panais
+                                </div>
+                            </div>
+                            <span class="prix">35€</span>
+                            <div class="enligne icbox">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </label>
+                    </div>                
+                </div>
+                <div class="enligne choix-et-check">
+                    <div class="enligne choix">
+                        <input type="checkbox" name="plat" id="turbot" class="checkbox-input"/>
+                        <label for="turbot" class="enligne label">
+                            <div class="checkbox-text">
+                                <h2 class="checkbox-text--title">Filet de turbot</h2>
+                                <div class="checkbox-text--description">Aux agrumes</div>
+                            </div>
+                            <span class="prix">44€</span> 
+                            <div class="enligne icbox">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </label>    
+                    </div>                
+                </div>
+                <!-- Desserts -->
                 <p><span class="underline">DESSE</span>RTS</p>
                 <div class="enligne choix-et-check">
                     <div class="enligne choix">
@@ -94,11 +145,60 @@
                         </label>
                     </div>                
                 </div>
+                <div class="enligne choix-et-check">
+                    <div class="enligne choix">
+                        <input type="checkbox" name="plat" id="macaron" class="checkbox-input"/>
+                        <label for="macaron" class="enligne label">
+                            <div class="checkbox-text">
+                                <h2 class="checkbox-text--title">Macaron au chocolat d'exception</h2>
+                                <div class="checkbox-text--description">Et glace à la vanille de Madagascar</div>
+                            </div>
+                            <span class="prix">22€</span>
+                            <div class="enligne icbox">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </label>
+                    </div>                
+                </div>
+                <div class="enligne choix-et-check">
+                    <div class="enligne choix">
+                        <input type="checkbox" name="plat" id="mousse" class="checkbox-input"/>
+                        <label for="mousse" class="enligne label">
+                            <div class="checkbox-text">
+                                <h2 class="checkbox-text--title">Mousse au chocolat</h2>
+                                <div class="checkbox-text--description">
+                                    Au piment d'Espelette et à la truffe noire
+                                </div>
+                            </div>
+                            <span class="prix">23€</span>
+                            <div class="enligne icbox">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </label>
+                    </div>                
+                </div>
             </div>
             <label for="orderbutton" class="orderlabel">
                 <span class="ordername">Commander</span>
             </label>    
-        </div>  
-
+        </div>
     </main>
+
+    <footer>
+        <img class="f-logo" src="assets/logo/ohmyfood@2x.svg" alt="Logo ohmyfood">
+        <div class="f-icntext">
+            <i class="fa-solid fa-utensils fa-sm"></i>
+            <h3 class="titre">Proposer un restaurant</h3>
+        </div>
+        <div class="f-icntext">
+            <i class="fa-solid fa-handshake-angle fa-sm"></i>
+            <h3 class="titre">Devenir propriétaire</h3>
+        </div>
+        <div class="f-elem">
+            <p>Mentions légales</p>
+        </div>
+        <div class="f-elem">
+            <p>Contact</p>
+        </div>
+    </footer>
 </body>

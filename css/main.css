@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,6 +15,68 @@ body {
   margin: 0;
   padding: 0;
   background-color: white;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+footer {
+  background-color: #464444;
+  color: white;
+  padding: 10vw 5vw;
+  text-align: left;
+}
+footer img {
+  height: 1.5rem;
+  filter: invert(100%);
+}
+footer .f-icntext {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 0;
+  margin: 0;
+}
+footer .f-icntext h3 {
+  font-size: 1rem;
+  margin: 2px 0;
+  padding: 0 0 0 2vw;
+}
+@media (min-width: 1000px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    padding: 5rem;
+    padding-left: 30vw;
+    gap: 1rem;
+  }
+  footer img {
+    height: 1.2rem;
+    position: absolute;
+    right: 3rem;
+  }
+  footer p, footer h3.titre {
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 0;
+  }
+  footer .f-icntext {
+    gap: 0.3rem;
+  }
 }
 
 header {
@@ -45,8 +108,9 @@ header .localite-container {
   box-shadow: 0 0.1em 0.5em 0.1em #e0e0e0;
 }
 header .localite-container .form {
-  width: 15rem;
-  padding-left: 8vw;
+  width: fit-content;
+  padding-left: 2rem;
+  margin: 0 auto;
 }
 header .localite-container .input {
   width: 60%;
@@ -61,7 +125,7 @@ header .localite-container .input {
   margin-left: 1vw;
 }
 
-.pub {
+main .pub {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,24 +136,24 @@ header .localite-container .input {
   padding: 20px 0 40px 0;
   border: none;
 }
-.pub h1 {
+main .pub h1 {
   font-size: calc(1.2vw + 1.2vh + 0.4vmin); /* rajout */
   letter-spacing: 0.1vw;
   color: #030303;
   padding: 0.5rem 4rem;
 }
-@media (max-width: 900px) {
-  .pub h1 {
+@media (max-width: 1000px) {
+  main .pub h1 {
     font-size: 1.4rem;
   }
 }
-.pub h2 {
+main .pub h2 {
   font-size: 1.1rem;
   color: #838181;
   font-weight: lighter;
   padding: 0.5rem 1rem;
 }
-.pub .exploration {
+main .pub .exploration {
   width: fit-content;
   border-radius: 50px;
   font-size: 1.1rem;
@@ -101,26 +165,54 @@ header .localite-container .input {
   box-shadow: 0px 3px 0.4em rgba(94, 4, 82, 0.9529411765);
   text-decoration: none;
 }
-.pub .exploration:hover {
+main .pub .exploration:hover {
   opacity: 0.8;
 }
-
-.fonctionnement {
-  margin: 20px 5vw;
+main .fonctionnement {
+  margin: 20px 10px;
   display: flex;
   flex-direction: column;
 }
-.fonctionnement h2 {
+main .fonctionnement h2 {
   font-size: 1.4rem;
   margin-bottom: 20px;
 }
-.fonctionnement .etape {
+@media (min-width: 1000px) {
+  main .fonctionnement .les-etapes {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 4vw;
+  }
+}
+main .fonctionnement .les-etapes .etape {
   display: flex;
   flex-direction: row;
   margin-bottom: 25px;
   align-items: baseline;
 }
-.fonctionnement .icntext {
+@media (min-width: 1000px) {
+  main .fonctionnement .les-etapes .etape {
+    width: 30%;
+  }
+}
+main .fonctionnement .les-etapes p.num {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: rgba(126, 46, 163, 0.8078431373);
+  border-radius: 20px;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 0 0 8px;
+  z-index: 1;
+}
+@media (min-width: 700px) and (max-width: 999px) {
+  main .fonctionnement .les-etapes p.num {
+    position: relative;
+    left: calc((100vw - 588px) / 2);
+  }
+}
+main .fonctionnement .les-etapes .icntext {
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -130,62 +222,70 @@ header .localite-container .input {
   padding: 5px 10vw;
   width: 90vw;
 }
-.fonctionnement .icntext h3 {
+@media (min-width: 700px) {
+  main .fonctionnement .les-etapes .icntext {
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 1000px) {
+  main .fonctionnement .les-etapes .icntext {
+    width: 28vw;
+    padding: 10px 2vw;
+    gap: 20px;
+  }
+}
+main .fonctionnement .les-etapes .icntext h3 {
   font-size: 1rem;
   margin: 20px 0;
   padding: 0 0 0 5vw;
 }
-.fonctionnement .fa-mobile-screen-button,
-.fonctionnement .fa-list,
-.fonctionnement .fa-store {
-  font-size: 5vw;
+@media (min-width: 1000px) {
+  main .fonctionnement .les-etapes .icntext h3 {
+    margin: 0;
+    padding: 0;
+  }
+}
+main .fonctionnement .les-etapes .fa-mobile-screen-button,
+main .fonctionnement .les-etapes .fa-list,
+main .fonctionnement .les-etapes .fa-store {
+  font-size: 1rem;
   color: #838181;
 }
-.fonctionnement p.num {
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: rgba(126, 46, 163, 0.8078431373);
-  border-radius: 20px;
-  color: white;
-  font-size: 0.8rem;
-  padding: 2px 0 0 8px;
-  margin: 0;
-  margin-left: -92vw;
-}
-
-.sec-restaurants {
+main .sec-restaurants {
   padding: 40px 0 5vw 5vw;
   background-color: rgba(245, 247, 250, 0.768627451);
 }
-.sec-restaurants h2 {
+main .sec-restaurants h2 {
   margin: 0;
-  padding-bottom: 5vw;
+  padding-bottom: 10px;
 }
-.sec-restaurants .restaurant {
+main .sec-restaurants .restaurant {
   align-items: left;
 }
-@media (max-width: 900px) {
-  .sec-restaurants .restaurant {
+@media (max-width: 1000px) {
+  main .sec-restaurants .restaurant {
     width: calc(100% - 5vw);
   }
 }
-@media (min-width: 901px) {
-  .sec-restaurants .restaurant {
+@media (min-width: 1001px) {
+  main .sec-restaurants .restaurant {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 5vw;
   }
 }
-.sec-restaurants .restaurant a {
+main .sec-restaurants .restaurant a {
   display: block;
   text-decoration: none;
   color: inherit;
 }
-.sec-restaurants .restaurant a:hover img {
+main .sec-restaurants .restaurant a:hover img {
   opacity: 0.8;
 }
-.sec-restaurants .restaurant a img {
+main .sec-restaurants .restaurant a img {
   width: 100%;
   height: 50vw;
   object-fit: cover;
@@ -193,53 +293,31 @@ header .localite-container .input {
   margin-left: 0;
   transition: opacity 0.3s ease-in-out;
 }
-@media (min-width: 901px) {
-  .sec-restaurants .restaurant a img {
+@media (min-width: 1001px) {
+  main .sec-restaurants .restaurant a img {
     height: 20vw;
   }
 }
-.sec-restaurants .restaurant h3 {
+main .sec-restaurants .restaurant h3 {
   margin: 0;
 }
-.sec-restaurants .restaurant .restaurant-item {
+main .sec-restaurants .restaurant .restaurant-item {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 1rem;
   padding: 0px 0 10px 0;
-  margin-bottom: 5vw;
+  margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(212, 211, 211, 0.1);
   border: none;
   width: 100%;
   height: auto;
   text-align: left;
 }
-@media (min-width: 901px) {
-  .sec-restaurants .restaurant .restaurant-item {
+@media (min-width: 1001px) {
+  main .sec-restaurants .restaurant .restaurant-item {
     width: 42vw;
   }
 }
-.sec-restaurants .restaurant .restaurant-item .card-txt {
+main .sec-restaurants .restaurant .restaurant-item .card-txt {
   padding-left: 3vw;
-}
-
-footer {
-  background-color: #464444;
-  color: white;
-  padding: 5vw 5vw;
-  text-align: left;
-}
-footer img {
-  height: 1.5rem;
-  filter: invert(100%);
-}
-footer .f-icntext {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  padding: 0;
-}
-footer .f-icntext h3 {
-  font-size: 1rem;
-  margin: 2px 0;
-  padding: 0 0 0 2vw;
 }/*# sourceMappingURL=main.css.map */

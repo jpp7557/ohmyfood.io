@@ -1,4 +1,5 @@
 @import './global';
+@import './footer';
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand:wght@400;500;700&display=swap');
 
 @mixin font-smoothing($value: on) {
@@ -6,21 +7,107 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
   }
-  @else {
-      -webkit-font-smoothing: subpixel-antialiased;
-      -moz-osx-font-smoothing: auto;
+}
+
+@mixin responsive-image($small, $tablet, $desktop) {
+  height: $small;
+  
+  @media (min-width: 600px) {
+    height: $tablet;
+  }  
+  @media (min-width: 1024px) {
+    height: $desktop;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 }
 
-@mixin longueur-apres-checked($value: checked) {
-  @if $value == checked {
-      .checkbox-text--description {
-        width: calc(80vw - 7rem);
-        animation: flash 2s;
-      };
-  }
+$responsive-menu-margin: 18vw;
+
+@mixin responsive-menu {
+    @media (min-width: 1024px) {
+      width: 100%;
+      max-width: 1025px;
+      margin-left:auto;
+      margin-right:auto;
+      padding: 0 184px;
+    }
+    @media (min-width: 600px) and (max-width: 1023px) {
+      width: 100%;
+      max-width: 700px;
+      margin-left:auto;
+      margin-right:auto;
+      padding: 0 70px;
+    }
 }
 
+@mixin responsive-nom {
+    @media (min-width: 1024px) {
+      justify-content: center;
+      //margin-left:auto;
+      //margin-right:auto;
+      gap: 32px;
+    }
+}
+@mixin responsive-label-text {
+    @media (min-width > 1024px) {
+        width: calc(50vw - 2*$responsive-menu-margin);
+    }
+}
+
+@mixin responsive-checked-hover {
+  .checkbox-input {
+    display:none;
+
+    @media (max-width : 700px) {
+
+      &:checked + .label .icbox  {
+        transition: transform $trstime ease, opacity $trstime ease;
+        transform: translateX(0);
+        opacity: 0.7;      
+      }
+
+      &:checked + .label .fa-check {
+        transform: translate(0, 0) translateX(-0.2rem);
+        opacity: 1;
+      }
+
+      &:checked + .label .prix {
+        transform: translate(0, 0) translateX(-5rem) translateY(0px);
+        transition: transform $trstime ease;
+      }
+
+      &:checked + .label .checkbox-text--description {
+          width: calc(75vw - 6rem);
+      }
+    }
+
+    @media (min-width : 701px) {
+
+      &:hover + .label .icbox  {
+        transition: transform $trstime ease, opacity $trstime ease;
+        transform: translateX(0);
+        opacity: 0.7;      
+      }
+
+      &:hover + .label .fa-check {
+        transform: translate(0, 0) translateX(-0.2rem);
+        opacity: 1;
+      }
+
+      &:hover + .label .prix {
+        transform: translate(0, 0) translateX(-5rem) translateY(0px);
+        transition: transform $trstime ease;
+      }
+
+      &:hover + .label .checkbox-text--description {
+          width: calc(75vw - 6rem);
+      }
+    }
+  }
+
+
+}         
 
 //$label-size: 60px;
 //$label-margin: 16px;
@@ -41,14 +128,13 @@ $trstime: 0.8s;
 
 * { 
   box-sizing: border-box;
-  @include font-smoothing(on);
 }
 
 header {
     display: flex;
     flex-direction: row;
     margin: 0.5rem 0 0 0;
-    padding: $usual-spacing;
+    padding: calc($horizon_spacing/2) 0 calc($horizon_spacing/2) calc($horizon_spacing/2);
     //@include flex-center;
     border: none;
 
@@ -66,20 +152,26 @@ main {
 
   img { 
     width: 100%;
-    height: 70vw;
     object-fit: cover;
     border-radius: 1rem 1rem 0 0;
     margin: 0;
     padding: 0;
+    @include responsive-image(20rem, 30rem, 35rem);
   }
 
 
   .order-button {
-    width: 100%;
+    max-width: 1024px;
     display: flex;
     flex-direction: column;
-    padding: 0;
-    //margin: 20px 2vw;
+    margin: 0;
+    //margin-left: 100px;
+    padding-bottom: 40px;
+    background-color: #f2f2f2;
+    @media (min-width: 1024px) {
+          margin-left: auto;
+          margin-right: auto;
+    }
 
     .order-checkbox {
         display:none;
@@ -99,8 +191,10 @@ main {
         cursor: pointer;
         width: fit-content;
         padding: 10px 40px;
-        margin-left: calc(50vw - 5rem);
+        //margin-left: calc(50vw - 5rem);
         margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
         border-radius: 50px;
         color:white;
         background-color: #c91ec9;
@@ -122,20 +216,13 @@ main {
         }
     }
 
-    /* Tablet specific styling */
-    @media (min-width: 601px) and (max-width: 1440px) {
-            .section {
-                width: 95%;
-            }
-    }
-  }
-
   .menu-txt {
-    padding: 0 $usual-spacing;
+    padding: 0 $horizon_spacing;
     background-color: #f2f2f2;
     margin-top: -50px;
     z-index : 1;
     border-radius: 40px;
+    @include responsive-menu;
 
     h1 {
       margin-top: 20px;
@@ -148,6 +235,7 @@ main {
 
     .enligne {
       padding: 0;
+      margin: 0;
       align-items: baseline;
       display: flex;
       flex-direction: row;
@@ -158,6 +246,7 @@ main {
       justify-content: space-between;
       align-items: baseline;
       margin-bottom : 20px;
+      @include responsive-nom;
     }
 
     .fa-heart {
@@ -175,12 +264,13 @@ main {
     .choix {
       background-color: white ;
       border-radius: 20px;
-      padding : 0px 0vw 0 0vw;
-      margin : $usual-spacing 0;
+      padding : 0;
+      margin : 8px 0;
       width: 100%;
     }
 
     .underline {
+      margin-top: 16px;
       border-bottom: 4px solid #b1f59c;
       display: inline-block;
       line-height: 2;
@@ -202,15 +292,14 @@ main {
   .icbox {
     position: absolute;
     font-size: 1rem;
-    top: -1px;
+    top: 0;
     right: 0rem;
     width: 5rem;
-    height: 4rem;
+    height: 64px;
     margin : 0;
     padding : 5px 0px 10px 10px;
     background-color: #7bc5cae5;
     border-radius: 0 20px 20px 0;
-    opacity: 1;
     transform: translate(0, 0) translateX(4.8rem);
     transition: transform $trstime ease, opacity $trstime ease;
     opacity: 0;
@@ -226,8 +315,8 @@ main {
     padding: 0.2rem 0.2rem 0rem 0em;
     background-color: white;
     color: #5ff0cce5;
-    width: 1.5em;
-    height: 1.5em;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     z-index: 1;
     transform: translate(0, 0) translateX(1rem);
@@ -235,64 +324,45 @@ main {
     opacity: 0;
   }
 
-  .checkbox-input {
-    display: none;
+  @include responsive-checked-hover;
 
-    //&:checked + .label::after {
-    //  transform: translateX(0);
-    //}
-
-    &:checked + .label .icbox {
-      transition: transform $trstime ease, opacity $trstime ease;
-      transform: translateX(0);
-      opacity: 0.7;
-    }
-
-    &:checked + .label .fa-check {
-      transform: translate(0, 0) translateX(-0.2rem);
-      opacity: 1;
-    }
-
-    &:checked + .label .prix {
-      transform: translate(0, 0) translateX(-5rem) translateY(0px);
-      transition: transform $trstime ease;
-    }
-
-    &:checked + .label .checkbox-text--description {
-        width: calc(75vw - 6rem);
-    }
-  }
   
+
   .label {
-    //display: inline-block;
+    display: inline-block;
     vertical-align: top;
     position: relative;
     width: 100%;
-    height: 4rem;
+    height: 64px;
     cursor: pointer;
     border-radius: 2px;
   }
-  
-  .checkbox-text {
-      //width: 80vw;
+ 
+    .checkbox-text {
+      width: 75vw;
 
       &--title {
-        width: 75vw;
+        width: 100%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         padding: 5px 0 0 3vw;
         font-weight: $font-bold;
+        @media (min-width > 750px) {
+          width: calc(50vw - 2*$responsive-menu-margin);
+        }
       }
       &--description {
-        width: 75vw;
+        width: 100%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         padding: 2px 0 0 3vw;
         font-size: 1rem;
         transition: width 0.6s;
+        @include responsive-label-text;
       }
+    }
   }
 }
 
