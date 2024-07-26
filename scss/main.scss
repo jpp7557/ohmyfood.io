@@ -13,7 +13,7 @@
     border-radius: 20px;
     box-shadow: 0 -0.3em 1em 0.2em  #e7e7e79d,
                 0 0.3em 0.5em 0.1em  #d7d9db9d;
-    padding : 5px 10vw;
+    padding : 5px 8vw;
     width : 90vw;
     @media (min-width:700px) {
        max-width: 580px;
@@ -22,14 +22,14 @@
     }
     @media (min-width: $breakpoint-lg) {
       width : 28vw;
-      padding : 10px 2vw;
+      padding : 10px 1vw;
       gap : 20px;
     }
 
     h3 {
       font-size: 1rem;
-      margin: 20px 0;
-      padding: 0 0 0 $horizon_spacing;
+      margin: 15px 0;
+      padding: 0 0 0 calc(1.5*$horizon_spacing);
       @media (min-width: $breakpoint-lg) {
         margin: 0;
         padding: 0;

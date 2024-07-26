@@ -55,6 +55,20 @@ body {
   margin: 0;
   padding: 0;
   background-color: $background-color;
+  opacity: 1;
+  transition: opacity 10s ease-in-out; /* Smooth transition for fade effects */
 }
 
+.fade-in {
+  opacity: 1; /* Initially hidden */
+  animation: fadeIn 3s forwards; /* Fade in animation */
+}
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}

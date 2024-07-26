@@ -15,8 +15,23 @@ body {
   margin: 0;
   padding: 0;
   background-color: white;
+  opacity: 1;
+  transition: opacity 10s ease-in-out; /* Smooth transition for fade effects */
 }
 
+.fade-in {
+  opacity: 1; /* Initially hidden */
+  animation: fadeIn 3s forwards; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -32,8 +47,23 @@ body {
   margin: 0;
   padding: 0;
   background-color: white;
+  opacity: 1;
+  transition: opacity 10s ease-in-out; /* Smooth transition for fade effects */
 }
 
+.fade-in {
+  opacity: 1; /* Initially hidden */
+  animation: fadeIn 3s forwards; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
 footer {
   background-color: #464444;
   color: white;
@@ -219,7 +249,7 @@ main .fonctionnement .les-etapes .icntext {
   background-color: rgba(240, 240, 240, 0.692);
   border-radius: 20px;
   box-shadow: 0 -0.3em 1em 0.2em rgba(231, 231, 231, 0.6156862745), 0 0.3em 0.5em 0.1em rgba(215, 217, 219, 0.6156862745);
-  padding: 5px 10vw;
+  padding: 5px 8vw;
   width: 90vw;
 }
 @media (min-width: 700px) {
@@ -232,14 +262,14 @@ main .fonctionnement .les-etapes .icntext {
 @media (min-width: 1000px) {
   main .fonctionnement .les-etapes .icntext {
     width: 28vw;
-    padding: 10px 2vw;
+    padding: 10px 1vw;
     gap: 20px;
   }
 }
 main .fonctionnement .les-etapes .icntext h3 {
   font-size: 1rem;
-  margin: 20px 0;
-  padding: 0 0 0 5vw;
+  margin: 15px 0;
+  padding: 0 0 0 7.5vw;
 }
 @media (min-width: 1000px) {
   main .fonctionnement .les-etapes .icntext h3 {

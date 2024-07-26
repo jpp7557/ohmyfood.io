@@ -16,8 +16,23 @@ body {
   margin: 0;
   padding: 0;
   background-color: white;
+  opacity: 1;
+  transition: opacity 10s ease-in-out; /* Smooth transition for fade effects */
 }
 
+.fade-in {
+  opacity: 1; /* Initially hidden */
+  animation: fadeIn 3s forwards; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -33,8 +48,23 @@ body {
   margin: 0;
   padding: 0;
   background-color: white;
+  opacity: 1;
+  transition: opacity 10s ease-in-out; /* Smooth transition for fade effects */
 }
 
+.fade-in {
+  opacity: 1; /* Initially hidden */
+  animation: fadeIn 3s forwards; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
 footer {
   background-color: #464444;
   color: white;
@@ -137,17 +167,17 @@ main .order-button {
     margin-right: auto;
   }
 }
-main .order-button .order-checkbox {
+main .order-checkbox {
   display: none;
 }
-main .order-button .order-checkbox:active ~ .menu-txt .label {
+main .order-checkbox:active ~ .menu-txt .choix {
   border-radius: 20px;
   animation: flash 1s;
 }
-main .order-button .order-checkbox:active ~ .menu-txt .fa-heart {
+main .order-checkbox:active ~ .menu-txt .fa-heart {
   animation: flash 1s;
 }
-main .order-button .orderlabel {
+main .orderlabel {
   display: flex;
   cursor: pointer;
   width: fit-content;
@@ -163,16 +193,16 @@ main .order-button .orderlabel {
   box-shadow: 0px 3px 0.4em rgba(94, 4, 82, 0.9529411765);
   text-decoration: none;
 }
-main .order-button .orderlabel:hover {
+main .orderlabel:hover {
   background-color: #f302fc;
   opacity: 0.8;
 }
-main .order-button .orderlabel .ordername {
+main .orderlabel .ordername {
   display: flex;
   flex-grow: 1;
   font-size: 18px;
 }
-main .order-button .menu-txt {
+main .menu-txt {
   padding: 0 5vw;
   background-color: #f2f2f2;
   margin-top: -50px;
@@ -180,16 +210,15 @@ main .order-button .menu-txt {
   border-radius: 40px;
 }
 @media (min-width: 1024px) {
-  main .order-button .menu-txt {
-    width: 100%;
-    max-width: 1025px;
+  main .menu-txt {
+    width: 1024px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 184px;
+    padding: 0 70px;
   }
 }
 @media (min-width: 600px) and (max-width: 1023px) {
-  main .order-button .menu-txt {
+  main .menu-txt {
     width: 100%;
     max-width: 700px;
     margin-left: auto;
@@ -197,22 +226,26 @@ main .order-button .menu-txt {
     padding: 0 70px;
   }
 }
-main .order-button .menu-txt h1 {
+main .menu-txt h1 {
   margin-top: 20px;
   font-family: shrikhand;
   font-size: 1.5rem;
 }
-main .order-button .menu-txt h2 {
+main .menu-txt h2 {
   font-size: 1rem;
 }
-main .order-button .menu-txt .enligne {
+main .menu-txt h3 {
+  font-size: 1rem;
+  font-weight: 300;
+}
+main .menu-txt .enligne {
   padding: 0;
   margin: 0;
   align-items: baseline;
   display: flex;
   flex-direction: row;
 }
-main .order-button .menu-txt .nom-et-coeur {
+main .menu-txt .nom-et-coeur {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -220,117 +253,89 @@ main .order-button .menu-txt .nom-et-coeur {
   margin-bottom: 20px;
 }
 @media (min-width: 1024px) {
-  main .order-button .menu-txt .nom-et-coeur {
+  main .menu-txt .nom-et-coeur {
     justify-content: center;
     gap: 32px;
   }
 }
-main .order-button .menu-txt .fa-heart {
+main .menu-txt .fa-heart {
   height: 1rem;
   transition: background-color 1s;
 }
-main .order-button .menu-txt .choix-et-check {
+main .menu-txt .choix-et-check {
   margin: 0;
   padding: 0;
   width: 100%;
   align-items: last baseline;
 }
-main .order-button .menu-txt .choix {
+main .menu-txt .choix {
   background-color: white;
   border-radius: 20px;
-  padding: 0;
+  padding: 0px 5px;
   margin: 8px 0;
   width: 100%;
 }
-main .order-button .menu-txt .underline {
+main .menu-txt .underline {
   margin-top: 16px;
   border-bottom: 4px solid #b1f59c;
   display: inline-block;
   line-height: 2;
 }
-main .order-button .prix {
+main .prix {
   font-size: 1rem;
+  font-weight: 500;
   position: absolute;
   padding: 0;
   margin: 0;
-  bottom: 10px;
-  right: 1rem;
+  top: 50%;
+  left: 88%;
   transform: translate(0, 0);
   transition: transform 0.8s ease;
   opacity: 1;
 }
-main .order-button .icbox {
+main .icbox {
   position: absolute;
-  font-size: 1rem;
-  top: 0;
-  right: 0rem;
+  font-size: 1.5rem;
+  top: -4%;
+  left: 87%;
   width: 5rem;
-  height: 64px;
+  height: 68px;
   margin: 0;
   padding: 5px 0px 10px 10px;
   background-color: rgba(123, 197, 202, 0.8980392157);
   border-radius: 0 20px 20px 0;
   transform: translate(0, 0) translateX(4.8rem);
   transition: transform 0.8s ease, opacity 0.8s ease;
-  opacity: 0;
+  opacity: 0.7;
 }
-main .order-button .fa-check {
-  position: relative;
-  top: 20px;
-  right: 0px;
-  font-size: 1rem;
-  margin: 0px auto;
-  padding: 0.2rem 0.2rem 0rem 0em;
-  background-color: white;
-  color: rgba(95, 240, 204, 0.8980392157);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+main .fa-circle-check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.5rem;
+  color: white;
   z-index: 1;
-  transform: translate(0, 0) translateX(1rem);
+  transform: translate(-50%, -50%);
   transition: transform 0.8s ease, opacity 0.8s ease;
-  opacity: 0;
+  opacity: 1;
 }
-main .order-button .checkbox-input {
-  display: none;
+main .choix:hover .icbox {
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  transform: translateX(-5%);
+  opacity: 1;
 }
-@media (max-width: 700px) {
-  main .order-button .checkbox-input:checked + .label .icbox {
-    transition: transform 0.8s ease, opacity 0.8s ease;
-    transform: translateX(0);
-    opacity: 0.7;
-  }
-  main .order-button .checkbox-input:checked + .label .fa-check {
-    transform: translate(0, 0) translateX(-0.2rem);
-    opacity: 1;
-  }
-  main .order-button .checkbox-input:checked + .label .prix {
-    transform: translate(0, 0) translateX(-5rem) translateY(0px);
-    transition: transform 0.8s ease;
-  }
-  main .order-button .checkbox-input:checked + .label .checkbox-text--description {
-    width: calc(75vw - 6rem);
-  }
+main .choix:hover .fa-circle-check {
+  transform: translate(-5% -50%);
+  opacity: 1;
 }
-@media (min-width: 701px) {
-  main .order-button .checkbox-input:hover + .label .icbox {
-    transition: transform 0.8s ease, opacity 0.8s ease;
-    transform: translateX(0);
-    opacity: 0.7;
-  }
-  main .order-button .checkbox-input:hover + .label .fa-check {
-    transform: translate(0, 0) translateX(-0.2rem);
-    opacity: 1;
-  }
-  main .order-button .checkbox-input:hover + .label .prix {
-    transform: translate(0, 0) translateX(-5rem) translateY(0px);
-    transition: transform 0.8s ease;
-  }
-  main .order-button .checkbox-input:hover + .label .checkbox-text--description {
-    width: calc(75vw - 6rem);
-  }
+main .choix:hover .prix {
+  transform: translate(0, 0) translateX(-5rem) translateY(0px);
+  transition: transform 0.8s ease;
 }
-main .order-button .label {
+main .choix:hover .plat--description {
+  width: calc(75vw - 5rem);
+}
+main .dessous {
   display: inline-block;
   vertical-align: top;
   position: relative;
@@ -339,33 +344,31 @@ main .order-button .label {
   cursor: pointer;
   border-radius: 2px;
 }
-main .order-button .checkbox-text {
-  width: 75vw;
-}
-main .order-button .checkbox-text--title {
-  width: 100%;
+main .dessous .plat--title {
+  width: 88%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 5px 0 0 3vw;
+  padding: 10px 0 0 20px;
   font-weight: 500;
 }
 @media (min-width > 750px) {
-  main .order-button .checkbox-text--title {
+  main .dessous .plat--title {
     width: 14vw;
   }
 }
-main .order-button .checkbox-text--description {
-  width: 100%;
+main .dessous .plat--description {
+  width: 86%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 2px 0 0 3vw;
-  font-size: 1rem;
+  padding: 0 0 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 400;
   transition: width 0.6s;
 }
 @media (min-width > 1024px) {
-  main .order-button .checkbox-text--description {
+  main .dessous .plat--description {
     width: 14vw;
   }
 }

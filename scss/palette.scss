@@ -26,11 +26,10 @@ $responsive-menu-margin: 18vw;
 
 @mixin responsive-menu {
     @media (min-width: 1024px) {
-      width: 100%;
-      max-width: 1025px;
+      width: 1024px;
       margin-left:auto;
       margin-right:auto;
-      padding: 0 184px;
+      padding: 0 70px;
     }
     @media (min-width: 600px) and (max-width: 1023px) {
       width: 100%;
@@ -41,72 +40,43 @@ $responsive-menu-margin: 18vw;
     }
 }
 
-@mixin responsive-nom {
-    @media (min-width: 1024px) {
+@mixin responsive-nom-et-coeur {
+  @media (min-width: 1024px) {
       justify-content: center;
       //margin-left:auto;
       //margin-right:auto;
       gap: 32px;
-    }
+  }
 }
-@mixin responsive-label-text {
+@mixin responsive-description {
     @media (min-width > 1024px) {
         width: calc(50vw - 2*$responsive-menu-margin);
     }
 }
 
 @mixin responsive-checked-hover {
-  .checkbox-input {
-    display:none;
+  .choix {
 
-    @media (max-width : 700px) {
-
-      &:checked + .label .icbox  {
+      &:hover  .icbox  {
         transition: transform $trstime ease, opacity $trstime ease;
-        transform: translateX(0);
-        opacity: 0.7;      
+        transform: translateX(-5%);
+        opacity: 1;      
       }
 
-      &:checked + .label .fa-check {
-        transform: translate(0, 0) translateX(-0.2rem);
+      &:hover   .fa-circle-check {
+        transform: translate(-5% -50%);
         opacity: 1;
       }
 
-      &:checked + .label .prix {
+      &:hover   .prix {
         transform: translate(0, 0) translateX(-5rem) translateY(0px);
         transition: transform $trstime ease;
       }
 
-      &:checked + .label .checkbox-text--description {
-          width: calc(75vw - 6rem);
+      &:hover   .plat--description {
+          width: calc(75vw - 5rem);
       }
-    }
-
-    @media (min-width : 701px) {
-
-      &:hover + .label .icbox  {
-        transition: transform $trstime ease, opacity $trstime ease;
-        transform: translateX(0);
-        opacity: 0.7;      
-      }
-
-      &:hover + .label .fa-check {
-        transform: translate(0, 0) translateX(-0.2rem);
-        opacity: 1;
-      }
-
-      &:hover + .label .prix {
-        transform: translate(0, 0) translateX(-5rem) translateY(0px);
-        transition: transform $trstime ease;
-      }
-
-      &:hover + .label .checkbox-text--description {
-          width: calc(75vw - 6rem);
-      }
-    }
   }
-
-
 }         
 
 //$label-size: 60px;
@@ -172,11 +142,12 @@ main {
           margin-left: auto;
           margin-right: auto;
     }
+  }
 
     .order-checkbox {
         display:none;
 
-        &:active ~ .menu-txt .label {
+        &:active ~ .menu-txt .choix {
             border-radius: 20px;
             animation: flash 1s;
         }
@@ -233,6 +204,11 @@ main {
       font-size: 1rem;
     }
 
+    h3 {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
     .enligne {
       padding: 0;
       margin: 0;
@@ -246,7 +222,7 @@ main {
       justify-content: space-between;
       align-items: baseline;
       margin-bottom : 20px;
-      @include responsive-nom;
+      @include responsive-nom-et-coeur;
     }
 
     .fa-heart {
@@ -264,9 +240,12 @@ main {
     .choix {
       background-color: white ;
       border-radius: 20px;
-      padding : 0;
+      padding : 0px 5px;
       margin : 8px 0;
       width: 100%;
+      //overflow: hidden;
+      //@include responsive-checked-hover;
+
     }
 
     .underline {
@@ -279,56 +258,49 @@ main {
 
   .prix {
     font-size: 1rem;
+    font-weight: 500;
     position: absolute;
     padding:0;
     margin:0;
-    bottom: 10px;
-    right: 1rem;
+    top: 50%;
+    left: 88%;
     transform: translate(0, 0);
     transition: transform $trstime ease;
     opacity: 1;
   }
 
   .icbox {
-    position: absolute;
-    font-size: 1rem;
-    top: 0;
-    right: 0rem;
+    position: absolute; 
+    font-size: 1.5rem;
+    top: -4%;
+    left: 87%;
     width: 5rem;
-    height: 64px;
+    height: 68px;
     margin : 0;
     padding : 5px 0px 10px 10px;
     background-color: #7bc5cae5;
     border-radius: 0 20px 20px 0;
     transform: translate(0, 0) translateX(4.8rem);
     transition: transform $trstime ease, opacity $trstime ease;
-    opacity: 0;
+    opacity: 0.7;
   
   }
 
-  .fa-check {
-    position: relative;
-    top: 20px;
-    right: -0px;
-    font-size: 1rem;
-    margin: 0px auto;
-    padding: 0.2rem 0.2rem 0rem 0em;
-    background-color: white;
-    color: #5ff0cce5;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+  .fa-circle-check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    color: white;
     z-index: 1;
-    transform: translate(0, 0) translateX(1rem);
+    transform: translate(-50%, -50%);
     transition: transform $trstime ease, opacity $trstime ease;
-    opacity: 0;
+    opacity: 1;
   }
 
   @include responsive-checked-hover;
 
-  
-
-  .label {
+  .dessous {
     display: inline-block;
     vertical-align: top;
     position: relative;
@@ -336,35 +308,33 @@ main {
     height: 64px;
     cursor: pointer;
     border-radius: 2px;
-  }
- 
-    .checkbox-text {
-      width: 75vw;
-
-      &--title {
-        width: 100%;
+  
+      .plat--title {
+        width: 88%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding: 5px 0 0 3vw;
+        padding: 10px 0 0 20px;
         font-weight: $font-bold;
         @media (min-width > 750px) {
           width: calc(50vw - 2*$responsive-menu-margin);
         }
       }
-      &--description {
-        width: 100%;
+
+      .plat--description {
+        width: 86%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding: 2px 0 0 3vw;
-        font-size: 1rem;
+        padding: 0 0 8px 20px;
+        font-size: 0.9rem;
+        font-weight: 400;
         transition: width 0.6s;
-        @include responsive-label-text;
+        @include responsive-description;
       }
     }
   }
-}
+
 
 /* Flash animation */
 @keyframes flash {
