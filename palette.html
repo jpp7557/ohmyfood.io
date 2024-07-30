@@ -8,38 +8,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="/css/palette.css">
 </head>
-<body class="fade-in">
+<body>
     <header>
-        <div class="navigation">
+        <div class="navigation fade-in-out">
             <nav>
                 <a class="retour" href="./index.html" target="_parent">
                     <i class="fa-solid fa-arrow-left"></i>
                 </a>
             </nav>
         </div>
-        <div class="logo">
+        <div class="logo fade-in-out">
             <img src="assets/logo/ohmyfood.png" alt="Logo ohmyfood">
         </div>
     </header>
-    <main>
+    <main class="palettemain">
         <img src="./restaurants/jay-wennington.jpg" alt="jay-wennington"/>
         <div class="order-button">
             <input type="checkbox" id="orderbutton" class="order-checkbox">
             <div class="menu-txt">
                 <div class="nom-et-coeur">
                     <h1>La palette du goût</h1>
-                    <i class="fa-regular fa-heart specifique"></i>
+                    <input type="checkbox" id="heartcheckbox" class="heartbox">
+                    <label for="heartcheckbox">
+                        <i class="far fa-heart heart-icon1"></i>
+                        <i class="fas fa-heart heart-icon2"></i>
+                    </label>
                 </div>
                 <!-- Entrées -->
                 <p><span class="underline">ENTR</span>EES</p>
                     <div class="choix">
                         <div class="dessous">
-                            <h2 class="plat--title">Fricassée d'escargots</h2>
-                            <h3 class="plat--description">Au piment d'Espelette</h3>
-                            <div class="prix">25€</div>
                             <div class="icbox">
                                 <i class="fa-solid fa-circle-check"></i>
                             </div>
+                            <h2 class="plat--title">Fricassée d'escargots</h2>
+                            <h3 class="plat--description">Au piment d'Espelette</h3>
+                            <div class="prix">25€</div>
                         </div>
                     </div>                
                     <div class="choix">

@@ -45,7 +45,83 @@ $vertical_spacing : 10px;
   }
 }
 
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0) translate3d(0, 0%, 0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 1s ease-in forwards;
+}
+
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-out {
+  opacity: 0;
+  animation: fade-in 1s ease-in forwards, fade-out 1s 0.1s ease-out ;
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 // Global styles
+header {
+
+  display: flex;
+    flex-direction: row;
+    justify-content:left;
+    margin: 0.5rem 0 0 0;
+    padding: calc($horizon_spacing/2) 0 calc($horizon_spacing/2) calc($horizon_spacing/2);
+    //@include flex-center;
+    border: none;
+
+  .logo {
+    margin: 1rem 0;
+    img {
+      position:absolute;
+      top:calc(8px + $horizon_spacing/2);
+      left:calc((100vw - 160px)/2);
+      width: 10rem;
+      height: auto;
+      }
+    }
+  }
+
+
 body {
   font-family: $font-primary;
   font-size: $base-font-size;
@@ -56,19 +132,42 @@ body {
   padding: 0;
   background-color: $background-color;
   opacity: 1;
-  transition: opacity 10s ease-in-out; /* Smooth transition for fade effects */
 }
 
-.fade-in {
-  opacity: 1; /* Initially hidden */
-  animation: fadeIn 3s forwards; /* Fade in animation */
+// text et fa-feart: affichage en ligne
+.nom-et-coeur {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom : 20px;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.7;
-  }
+//pour le coeur fa-heart
+.heart-icon1 {
+  color: #000; /* Initial color */
+  cursor: pointer;
+  font-size: 1.6em; /* Adjust the size as needed */
+  font-weight: 600;
 }
+.heart-icon2 {
+  color: white; /* Initial color */
+  cursor: pointer;
+  font-size: 1.5em; /* Adjust the size as needed */
+  position:relative;
+  top:-1px;
+  left:-54%;  //pour couvrir heart-icon1
+}
+
+.heartbox {
+  display: none;
+}
+
+.heartbox:checked + label .heart-icon1 {
+  color: white;
+}
+.heartbox:checked + label .heart-icon2 {
+  color: #8501a0;
+  text-shadow: 0 0 5px #4d015c; //donner effet blur
+}
+

@@ -13,12 +13,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>
-<body class="fade-in">
+<body>
     <header>
-        <div class="logo">
+        <div class="logo fade-in-out">
             <img src="assets/logo/ohmyfood.png" alt="Logo ohmyfood">
         </div>        
-        <div class="localite-container">
+    </header>
+
+    <main>
+        <div class="localite-container slide-in">
             
             <form class="form" action="/submit" method="post">
                 <label for="localite"><i class="fa-sharp fa-solid fa-location-dot fa-lg"></i></label>
@@ -26,10 +29,7 @@
                 </button>
             </form>
         </div>
-    </header>
-
-    <main>
-        <section class="pub">
+        <section class="pub slide-in">
             <h1>Réservez le menu qui vous convient</h1>
             <h2>Découvrez les restaurants d'exception, découvrés par nos soins</h2>
             <a class="exploration" href="#sec-restaurants">
@@ -65,20 +65,25 @@
             </div>
         </section>
 
-        <section id="sec-restaurants" class="sec-restaurants">
+        <section id="sec-restaurants" class="sec-restaurants fade-in-out">
             <h2 class="titre">Restaurants</h2>
             <div class="restaurant">
-                <div class="restaurant-item">
-                    <a href="./palette.html" target="_parent">
+                    <a class="restaurant-item" href="./palette.html" target="_parent">
                         <article class="card">
                             <img src="./restaurants/jay-wennington.jpg" alt="jay-wennington">
                                 <div class="card-txt">
                                     <h3 class="titre">La palette du goût</h3>
-                                    <p>Ménilmontant</p>
+                                    <div class="nom-et-coeur"
+                                        <p>Ménilmontant</p>
+                                        <input type="checkbox" id="heartcheckbox" class="heartbox">
+                                        <label for="heartcheckbox">
+                                            <i class="far fa-heart heart-icon1"></i>
+                                            <i class="fas fa-heart heart-icon2"></i>
+                                        </label>
+                                    </div>
                                 </div>
                         </article>
                     </a>
-                </div>
                 <div class="restaurant-item">
                     <a href="#">
                         <article class="card">

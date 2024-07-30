@@ -11,8 +11,9 @@
     align-items: baseline; 
     background-color: rgba(240, 240, 240, 0.692);
     border-radius: 20px;
-    box-shadow: 0 -0.3em 1em 0.2em  #e7e7e79d,
-                0 0.3em 0.5em 0.1em  #d7d9db9d;
+    text-shadow: 0 10px 3px 10px  #f7b5b59d;
+    //box-shadow: 0 -0.3em 1em 0.2em  #e7e7e79d,
+    //            0 0.3em 0.5em 0.1em  #d7d9db9d;
     padding : 5px 8vw;
     width : 90vw;
     @media (min-width:700px) {
@@ -38,25 +39,29 @@
   }  
 }
 
-// Header
-header {
-    margin: 0.5rem 0 0 0;
-    @include flex-center;
-    flex-direction: column;
-    border: none;
-
-  .logo {
-    margin: 1rem 0;
-    img {
-      width: 10rem;
-      height: auto;
-    }
+@keyframes moveBox {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -2.5em, 0);
   }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: transform 2s ease, opacity 2s ease;
+  }
+}
+
+// Header  in globals
+
+main {
+
+  ///animation: moveBox 2s;
+  
   .localite-container {
     box-sizing: content-box;
     width: calc(100% - 1rem);
     padding: 0.8rem;
-    background-color: $main-bg-color;
+    background-color:#d2d4da9d;
     @include flex-center;
     flex-direction: row;
     margin:0 auto;
@@ -83,8 +88,6 @@ header {
     }
   }
 
-}
-main {
     .pub {
       
       display: flex;
@@ -266,6 +269,7 @@ main {
         .card-txt {
           padding-left: 3vw;
         }
+
       }
 
     }
