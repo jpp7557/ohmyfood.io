@@ -18,18 +18,17 @@
   }  
   @media (min-width: 1024px) {
     height: $desktop;
-    max-width: 1440px;
+    max-width: 1600px;
     margin: 0 auto;
   }
 }
 
-$responsive-menu-margin: 18vw;
-
 @mixin responsive-menu {
   margin-left:auto;
   margin-right:auto;
+  width: 100%;
     @media (min-width: 1024px) {
-      width: 800px;
+      max-width: $max-width-menu;
     }
     @media (min-width: 600px) and (max-width: 1023px) {
       width: 600px;
@@ -38,13 +37,11 @@ $responsive-menu-margin: 18vw;
 
 @mixin responsive-nom-et-coeur {
   @media (min-width: 1024px) {
-      justify-content: center;
       gap: 32px;
+      max-width: 420px;
+      margin: auto;
   }
 }
-//@mixin responsive-description {
-//        width: calc(100% - 2*$responsive-menu-margin);
-//}
 
 @mixin responsive-checked-hover {
   .choix {
@@ -86,6 +83,10 @@ $font-light: 300;
 $font-normal: 400;
 $font-bold: 500;
 
+$max-width-choix: 700px;
+$max-width-menu: 1200px;
+$responsive-menu-margin: 10vw;
+
 $trstime: 0.8s;
 
 * { 
@@ -95,11 +96,7 @@ $trstime: 0.8s;
 
 main {
 
-    //transform: translate3d(0, 0%,0) translate(0, 0, 0);
-    //transition: 2s all ease-in-out;
     animation: slideIn 1s cubic-bezier(0, 0.3, 0, 0.1);
-    //animation-direction: alternate-reverse;
-    //animation-timing-function: ease-in-out;
   
   display: flex;
   flex-direction: column;
@@ -110,7 +107,7 @@ main {
     border-radius: 1rem 1rem 0 0;
     margin: 0;
     padding: 0;
-    @include responsive-image(20rem, 30rem, 35rem);
+    @include responsive-image(20rem, 20rem, 30rem);
   }
 
   .order-button {
@@ -169,19 +166,22 @@ main {
   .menu-txt {
     padding: 0 $horizon_spacing;
     background-color: #f2f2f2;
-    margin-top: -50px;
+    margin-top: -35px;
     z-index : 1;
     border-radius: 40px;
     width: 90vw;
     @include responsive-menu;
 
     h1 {
-      margin-top: 20px;
+      margin-top: 40px;
       font-family: shrikhand;
-      font-size: 1.5rem;
+      font-size: clamp(1.8rem, 2vw, 2.2rem);
+      //font-size: 2rem;
+      color: #000;
     }
     h2 {
-      font-size: 1rem;
+      font-size: 1.2rem;
+      color: #000;
     }
 
     h3 {
@@ -201,8 +201,9 @@ main {
     }
 
     .fa-heart {
-      height: 1rem;
+      height: 1.6em;
       transition: background-color 1s;
+      top: 0;
     }
 
     .choix-et-check {
@@ -212,21 +213,17 @@ main {
       align-items: last baseline;
     }
 
-    .choix {
-      background-color: white ;
-      border-radius: 20px;
-      padding : 0px 5px;
-      margin : 8px 0;
-      width: 100%;
-      overflow: hidden;
-
-    }
-
     .underline {
       margin-top: 16px;
       border-bottom: 4px solid #b1f59c;
       display: inline-block;
       line-height: 2;
+      @media (min-width: 1024px) {  //$max-width-choix: 700px
+        margin-left: calc(((95vw - $max-width-choix )/4));
+      }
+      @media (min-width: 1220px) { //$max-width-menu: 1200px
+        margin-left: calc((($max-width-menu - $max-width-choix)/4) + 3rem);
+      }
     }
   }
 
@@ -237,7 +234,7 @@ main {
     padding:0;
     margin:0;
     top: 50%;
-    left: calc(100% - 2rem);
+    left: calc(100% - 3rem);
     transform: translate(0, 0);
     transition: transform $trstime ease;
     opacity: 1;
@@ -249,14 +246,14 @@ main {
     top: -4%;
     left: 102%;
     width: 5rem;
-    height: 68px;
+    height: 5rem;
     margin : 0;
     padding : 5px 0px 10px 10px;
     background-color: #7bc5cae5;
     border-radius: 0 20px 20px 0;
     transform: translate(0, 0) translateX(0);
     transition: transform $trstime ease, opacity $trstime ease;
-    opacity: 0.7;
+    opacity: 0;
   
   }
 
@@ -274,14 +271,34 @@ main {
 
   @include responsive-checked-hover;
 
-  .dessous {
-    display: inline-block;
+  //.choix// {
+    //background-color: white ;
+    //border-radius: 20px;
+    //padding : 0px 5px;
+    //margin : 8px 0;
+    //width: 100%;
+    //overflow: hidden;
+
+  //}
+
+  .choix {
+    //display: inline-block;
     vertical-align: top;
     position: relative;
     width: 100%;
-    height: 64px;
+    //height: 64px;
     cursor: pointer;
-    border-radius: 2px;
+    background-color: white ;
+    padding : 0px 20px 5px 5px;
+    margin : 16px 0;
+    overflow: hidden;
+    border-radius: 20px;
+           /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 0.1em 0.8em 0.1em  #e2e2e2;
+    @media (min-width: 1024px) {
+      max-width: $max-width-choix;
+      margin : 16px auto;
+    }
   }
       .plat--title {
         width: 88%;

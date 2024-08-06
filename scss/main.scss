@@ -1,5 +1,4 @@
 @import './global';
-//@import './palette';
 @import './footer';
 
 
@@ -9,30 +8,30 @@
     display: flex;
     flex-direction: row;
     align-items: baseline; 
-    background-color: rgba(240, 240, 240, 0.692);
+    background-color: #f0f0f0b0;
     border-radius: 20px;
     text-shadow: 0 10px 3px 10px  #f7b5b59d;
-    //box-shadow: 0 -0.3em 1em 0.2em  #e7e7e79d,
-    //            0 0.3em 0.5em 0.1em  #d7d9db9d;
-    padding : 5px 8vw;
-    width : 90vw;
+    box-shadow: 0 0.3em 0.5em 0.1em  #d7d9db9d;
+    padding : 5px 2vw 5px 16px;
+    width : 85vw;
     @media (min-width:700px) {
-       max-width: 580px;
+       max-width: $max-width-icntxt;
        margin-left:auto;
        margin-right: auto;
     }
     @media (min-width: $breakpoint-lg) {
       width : 28vw;
-      padding : 10px 1vw;
-      gap : 20px;
+      padding : 5px 2vw;
+      gap : 10px;
     }
 
     h3 {
       font-size: 1rem;
-      margin: 15px 0;
+      margin: 20px 0;
       padding: 0 0 0 calc(1.5*$horizon_spacing);
+
       @media (min-width: $breakpoint-lg) {
-        margin: 0;
+        //margin: 0;
         padding: 0;
       }
     }
@@ -55,11 +54,11 @@
 
 main {
 
-  ///animation: moveBox 2s;
-  
+  max-width: 1440px;
+  margin: 0 auto;
+
   .localite-container {
     box-sizing: content-box;
-    width: calc(100% - 1rem);
     padding: 0.8rem;
     background-color:#d2d4da9d;
     @include flex-center;
@@ -70,17 +69,19 @@ main {
 
     .form {
         width: fit-content;
-        padding-left: 2rem;
+        padding-left: 5rem;
         margin: 0 auto;
     }
     .input {
-        width: 60%;
+        width: 50%;
         font-size: 16px;
         font-size: max(16px, 1em);
         font-family: inherit;
         text-align: center;
-        padding: 0.25em 0em;
-        background-color: $main-bg-color;
+        padding: 0.4em 0em;
+        background-color: #d2d4da9d;
+        //opacity: 0.6;
+        //box-shadow: 0 0.1em 0.5em 0.1em  #e0e0e0;
         border: none;
         //border: 2px solid #ee07ee;
         border-radius: 4px;
@@ -136,25 +137,24 @@ main {
             opacity: 0.8;
           };
         }      
-  }
+    }
   // section fonctionnement
   .fonctionnement {
     margin : 20px $vertical_spacing;
     display: flex;
     flex-direction: column;
+    margin-left: 4vw;
 
     h2 {
       font-size: 1.4rem;
-      margin-bottom: 20px;;
+      margin-bottom: 20px;
     }
     
     .les-etapes {
       @media (min-width : $breakpoint-lg) {
         display: flex;
         flex-direction: row;
-        //justify-content: space-around;
-        gap: 10px;
-        margin-left: 4vw;
+        gap: 24px;
       }
 
       .etape {
@@ -177,12 +177,11 @@ main {
         color : white;
         font-size: 0.8rem;
         padding: 2px 0 0 8px;
-        //margin: 0;
-        //margin-left: px;
+        position:relative;
+        left:1%;
         z-index: 1;
         @media (min-width:700px) and (max-width: 999px) {
-          position:relative;
-          left: calc((100vw - 588px)/2);
+            left: calc((100vw - ($max-width-icntxt + 4rem))/2);
         }     
       }
       
@@ -191,7 +190,7 @@ main {
       .fa-mobile-screen-button,
       .fa-list,
       .fa-store {
-          font-size: 1rem;
+          font-size: 1.4rem;
           color: #838181;
         }
     }
@@ -199,28 +198,82 @@ main {
 
   // section sec-restaurants
   .sec-restaurants {
-    //display:flex;
-    //flex-direction: column;
+    display:flex;
+    flex-direction: column;
     padding: $base-spacing 0 $horizon_spacing $horizon_spacing;
     background-color: #f5f7fac4;
+
+    @include respond-to(small) {
+      width: calc(100%);
+    }
+    @include respond-to(large) {
+      width: calc(100%);
+      margin: 0 auto;
+    }
 
     h2 {
       margin: 0;
       padding-bottom: $vertical_spacing;
     }
+    h2.titre {
+      width: 90vw;
+    }
 
-    .restaurant {
-      align-items: left;
+    .groupe-restaurants {
+      display:flex;
+      flex-direction: column;
+      gap: 20px;
 
-      @include respond-to(small) {
-        width: calc(100% - $horizon_spacing);
-      }
       @include respond-to(large) {
-        display :flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 5vw;
+          display :grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          width: 100%;
+          height: auto;
+          column-gap: 50px;
+          row-gap: 25px;
       }
+
+      img { 
+        width: 100%;
+        height: calc(0.35 * $breakpoint-sm) ;
+        object-fit:cover;
+        border-radius: 1rem 1rem 0 0;
+        margin-left: 0;
+        transition: opacity 0.3s ease-in-out;
+        
+        @include respond-to(large) {
+          width: 100%;
+        }
+      }
+
+      .restaurant {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        width: calc(100% - $horizon_spacing);
+        height: auto;
+        @include respond-to(large) {
+          gap : 5px;
+        }
+        
+          .restaurant-item {
+            @include respond-to(large) {
+              max-width: $breakpoint-lg;
+            }
+    
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 24px 24px 0 0;
+            //padding: 0px 0 10px 0;
+            //margin-bottom: $vertical_spacing;
+            box-shadow: 0 2px 4px rgba(212, 211, 211, 0.1);
+            border: none;
+            width: 100%;
+            height: auto;
+            text-align: left;      
+          }
+      } 
 
       a {
         display: block;
@@ -230,49 +283,28 @@ main {
         &:hover img {
           opacity: 0.8;
         }
-
-        img { 
-          width: 100%;
-          height: 50vw;
-          object-fit: cover;
-          border-radius: 1rem 1rem 0 0;
-          margin-left: 0;
-          transition: opacity 0.3s ease-in-out;
-          
-          @include respond-to(large) {
-            height: 20vw;
-          }
-        }
-      }
+      } 
 
       h3 {
         margin: 0 ;
       }
-
-      .restaurant-item {
-
-        @include respond-to(large) {
-          width: 42vw;
-        }
-
-        background-color: white;
-        border: 1px solid #ddd;
-        border-radius: 1rem;
-        padding: 0px 0 10px 0;
-        margin-bottom: $vertical_spacing;
-        box-shadow: 0 2px 4px rgba(212, 211, 211, 0.1);
-        border: none;
-        width: 100%;
-        height: auto;
-        text-align: left;      
-
-        .card-txt {
-          padding-left: 3vw;
-        }
-
-      }
-
     }
+
+      .r-card-txt {
+          background-color: #ffffff;
+          padding: $vertical_spacing 0 calc($vertical_spacing/2) 0;
+          padding-left: 3vw;
+          margin-bottom: 0;
+          border-radius: 0 0 24px 24px;
+
+          .heart-icon {
+            width: 1.5em;
+            height:1.5em;
+          }
+          @media (min-width: $breakpoint-lg) {
+            padding-left: calc(3vw/2);
+            //margin-bottom: 0;
+          }
+      }
   }  
 }
-// Footer
