@@ -7,8 +7,8 @@
   padding: 0;
 }
 
-h1, h2, h3, p {
-  color: #000;
+h1, h2 {
+  color: #202020;
 }
 
 @keyframes slideIn {
@@ -160,8 +160,8 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, p {
-  color: #000;
+h1, h2 {
+  color: #202020;
 }
 
 @keyframes slideIn {
@@ -310,7 +310,7 @@ body {
 footer {
   background-color: #464444;
   color: white;
-  padding: 10vw 5vw;
+  padding: 10vw;
   text-align: left;
 }
 footer img {
@@ -333,8 +333,9 @@ footer .f-icntext h3 {
   footer {
     display: flex;
     flex-direction: row;
+    justify-content: right;
     padding: 5rem;
-    padding-left: 30vw;
+    padding-right: 200px;
     gap: 1rem;
   }
   footer img {

@@ -3,7 +3,7 @@
 footer {
     background-color: #464444;
     color: white;
-    padding: calc(2*$horizon_spacing) $horizon_spacing;
+    padding: calc(2*$horizon_spacing);
     text-align: left;
     
     img {
@@ -28,8 +28,9 @@ footer {
     @media (min-width: 1000px) {
         display: flex;
         flex-direction: row;
+        justify-content: right;
         padding: 5rem;
-        padding-left: 30vw;
+        padding-right: 200px;
         img {
             height: 1.2rem;
             position: absolute;
