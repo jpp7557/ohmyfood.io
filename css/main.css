@@ -20,24 +20,24 @@ h1, h2 {
   }
 }
 .slide-in {
-  animation: slideIn 1s ease-in forwards;
+  animation: slideIn 5s ease-in forwards;
 }
 
 @keyframes fadeOut {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
   10% {
-    opacity: 0.4;
+    opacity: 0.8;
   }
   30% {
     opacity: 0.6;
   }
   80% {
-    opacity: 0.8;
+    opacity: 0.4;
   }
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 .fade-in-out {
@@ -153,6 +153,81 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* HTML: <div class="loader"></div> */
+/*
+.loader {
+  width: 50%;
+  height: 20px;
+  background: 
+    linear-gradient(90deg, #0000 ,orange) left -50px top 0/50px 20px no-repeat 
+    lightblue;
+  animation: l2 1s 10 linear, l2-end 0.5s ease-in forwards;
+}
+
+@keyframes l2 {
+  100% {background-position: right -50px top 0}
+}
+@keyframes l2-end {
+    100% {display: none;}
+}
+*/
+/* HTML: <div class="loader"></div> */
+.loader {
+  position: relative;
+  top: -40px;
+  left: 47vw;
+  width: clamp(4vw, 6vw, 40px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid lightblue;
+  border-right-color: orange;
+  z-index: 1000;
+  animation: l2 1s 5 linear;
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes l2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+    transform: rotate(1turn);
+  }
+}
+.hide-loader .loader {
+  opacity: 0.1;
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes disparition {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -173,24 +248,24 @@ h1, h2 {
   }
 }
 .slide-in {
-  animation: slideIn 1s ease-in forwards;
+  animation: slideIn 5s ease-in forwards;
 }
 
 @keyframes fadeOut {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
   10% {
-    opacity: 0.4;
+    opacity: 0.8;
   }
   30% {
     opacity: 0.6;
   }
   80% {
-    opacity: 0.8;
+    opacity: 0.4;
   }
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 .fade-in-out {
@@ -306,6 +381,81 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* HTML: <div class="loader"></div> */
+/*
+.loader {
+  width: 50%;
+  height: 20px;
+  background: 
+    linear-gradient(90deg, #0000 ,orange) left -50px top 0/50px 20px no-repeat 
+    lightblue;
+  animation: l2 1s 10 linear, l2-end 0.5s ease-in forwards;
+}
+
+@keyframes l2 {
+  100% {background-position: right -50px top 0}
+}
+@keyframes l2-end {
+    100% {display: none;}
+}
+*/
+/* HTML: <div class="loader"></div> */
+.loader {
+  position: relative;
+  top: -40px;
+  left: 47vw;
+  width: clamp(4vw, 6vw, 40px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid lightblue;
+  border-right-color: orange;
+  z-index: 1000;
+  animation: l2 1s 5 linear;
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes l2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+    transform: rotate(1turn);
+  }
+}
+.hide-loader .loader {
+  opacity: 0.1;
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes disparition {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 footer {
   background-color: #464444;
   color: white;
