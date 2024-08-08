@@ -62,25 +62,6 @@ $vertical_spacing : 10px;
   animation: slideIn 5s ease-in forwards;
 }
 
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  10% {
-    opacity: 0.8;
-  }
-  30% {
-    opacity: 0.6;
-  }
-  80% {
-    opacity: 0.4;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .fade-in-out {
   opacity: 0;
   animation: fade-in 1s ease-in forwards, fade-out 1s 0.1s ease-out ;
@@ -108,7 +89,7 @@ header {
     flex-direction: row;
     justify-content:left;
     margin: 0.5rem 0 0 0;
-    padding: calc($horizon_spacing/2) 0 calc($horizon_spacing/2) calc($horizon_spacing/2);
+    padding: calc($horizon_spacing/2) 0 calc($horizon_spacing/8) calc($horizon_spacing/2);
     //@include flex-center;
     border: none;
 
@@ -203,31 +184,11 @@ body {
 }
 
 /* HTML: <div class="loader"></div> */
-/*
-.loader {
-  width: 50%;
-  height: 20px;
-  background: 
-    linear-gradient(90deg, #0000 ,orange) left -50px top 0/50px 20px no-repeat 
-    lightblue;
-  animation: l2 1s 10 linear, l2-end 0.5s ease-in forwards;
-}
-
-@keyframes l2 {
-  100% {background-position: right -50px top 0}
-}
-@keyframes l2-end {
-    100% {display: none;}
-}
-*/
-
-
-/* HTML: <div class="loader"></div> */
 .loader {
   position:relative;
-  top:-40px;
-  left: 47vw;
-  width: clamp(4vw, 6vw, 40px);
+  top:0px;
+  left: 47%;
+  width: clamp(30px, 6vw, 60px);
   aspect-ratio: 1;
   border-radius: 50%;
   border: 8px solid lightblue;
@@ -241,13 +202,13 @@ body {
 @keyframes l2 {
   from {opacity: 1}  
   to {
-    opacity: 0.8;
+    opacity: 0.8; 
     transform: rotate(1turn)
   }
 }
 
-.hide-loader .loader {
-  opacity: 0.1;
+.loader {
+  opacity: 0;
   //visibility: hidden; /* Hide the loader after 5s */
 }
 

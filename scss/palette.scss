@@ -69,18 +69,14 @@
 }        
 
 .ordre1 {
-  animation: apparition 3s ease;
+  animation: sildeIn 2s ease;
 }
 .ordre2 {
-  animation: apparition 6s ease;
+  animation: slideIn 4s ease;
 }
 .ordre3 {
-  animation: apparition 9s ease;
+  animation: slideIn 7s ease;
 }
-
-//$label-size: 60px;
-//$label-margin: 16px;
-//$label-before-size: 40px;
 
 $color-light: white;
 $color-brand: #2196F3;
@@ -106,8 +102,8 @@ $trstime: 0.8s;
 
 main {
 
-    animation: slideIn 1s cubic-bezier(0, 0.3, 0, 0.1);
-  
+  animation: slideIn 3s cubic-bezier(0, 0.3, 0, 0.1);
+  opacity:1;
   display: flex;
   flex-direction: column;
 
@@ -228,13 +224,12 @@ main {
       border-bottom: 4px solid #b1f59c;
       display: inline-block;
       line-height: 2;
-      @media (min-width: 1024px) {  //$max-width-choix: 700px
-        //margin-left: calc(((95vw - $max-width-choix )/4));
-        display: inline-block;
-        margin-left: calc(7rem + (14vw - 7rem));
-      }
-      @media (min-width: 1220px) { //$max-width-menu: 1200px
-        margin-left: calc((($max-width-menu - $max-width-choix)/4) + 3rem);
+    }
+
+    .encolonne {
+      @media (min-width: 1024px) {
+        max-width: $max-width-choix;
+        margin : 0 auto;
       }
     }
   }
