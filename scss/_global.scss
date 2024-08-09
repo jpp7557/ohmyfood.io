@@ -130,13 +130,6 @@ body {
   justify-content: space-between;
   align-items: baseline;
   margin-bottom : 10px;
-
-  /*
-  .heart-icon {
-    width: 0.8em; 
-    height: 0.8em;
-  }
-  */
 }
 
 .heartbox {
@@ -160,20 +153,7 @@ body {
 
 }
 
-.heartbox:hover .heart-icon1 {
-  color: white;
-}
-
 .heartbox:hover .heart-icon2 {
-  background: linear-gradient(to bottom, #770477, #f53cd6);
-  background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 1px transparent; /* Outline color */
-    //// -webkit prefixed property for older web browser version 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.heartbox:hover .heart-icon {
   background: linear-gradient(to bottom, #770477, #f53cd6);
   background-clip: text;
   color: transparent;
@@ -224,4 +204,14 @@ body {
   50% { opacity: 0.5; }
   80% { opacity: 0.2; }
   100% { opacity: 0; }
-} 
+}
+
+.footer-iframe {
+  padding : 0;
+  margin: 0;
+  width: 100vw;
+  height: auto;
+  @media (min-width: $breakpoint-lg) {
+     height: 100px;
+  }
+}
