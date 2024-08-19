@@ -53,13 +53,19 @@ $vertical_spacing : 10px;
     opacity: 0;
     transform: translate3d(0, 10px, 0) translate3d(0, 0%, 0);
   }
+  60% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.5;
+  }
   100% {
     opacity: 1;
   }
 }
 
 .slide-in {
-  animation: slideIn 5s ease-in forwards;
+  animation: slideIn 5s ease-out forwards;
 }
 
 .fade-in-out {
@@ -89,7 +95,7 @@ header {
     flex-direction: row;
     justify-content:left;
     margin: 0.5rem 0 0 0;
-    padding: calc($horizon_spacing/2) 0 calc($horizon_spacing/8) calc($horizon_spacing/2);
+    padding: calc($horizon_spacing/2) 0 calc($horizon_spacing/2) calc($horizon_spacing/2);
     //@include flex-center;
     border: none;
 
@@ -101,6 +107,7 @@ header {
       width: 10rem;
       left:calc((100vw - 10rem)/2);
       height: auto;
+      padding-bottom: 10px;
       @media (min-width: $breakpoint-lg) {
         width: 15rem;
         left: calc((100vw - 15rem)/2);
@@ -138,6 +145,15 @@ body {
   margin: 0;
 }
 
+@mixin enveloppe-heart-icon2 {
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1px transparent; /* Outline color */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .heart-icon2 {
   color: #ffffff; /* Initial color */
   cursor: pointer;
@@ -146,21 +162,32 @@ body {
   top:-8px;
   left: calc(-1 * $horizon_spacing);
   padding: 0 2px;
-  -webkit-text-stroke: 1px black; /* Outline color */
   @media (min-width: $breakpoint-lg) {
     left: calc(-1 * $horizon_spacing/2);
   }
+  @include enveloppe-heart-icon2;
+  -webkit-text-stroke: 1px black; /* Outline color */
+
 
 }
 
+@keyframes gradientAnimation {
+  0% {
+      background: #f53cd6;
+      @include enveloppe-heart-icon2;
+  }
+  50% {
+    background: #770477;
+    @include enveloppe-heart-icon2;
+  }
+  100% {
+    background: linear-gradient(to bottom, #770477, #f53cd6);
+    @include enveloppe-heart-icon2;
+  }
+}
+
 .heartbox:hover .heart-icon2 {
-  background: linear-gradient(to bottom, #770477, #f53cd6);
-  background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 1px transparent; /* Outline color */
-    //// -webkit prefixed property for older web browser version 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 2s ease-in-out forwards;
 }
 
 /* HTML: <div class="loader"></div> */
@@ -190,20 +217,6 @@ body {
 .loader {
   opacity: 0;
   //visibility: hidden; /* Hide the loader after 5s */
-}
-
-@keyframes apparition {
-  0%  { opacity: 0.1; }
-  50% { opacity: 0.2; }
-  80% { opacity: 0.5; }
-  100% { opacity: 1; }
-}
-
-@keyframes disparition {
-  0%  { opacity: 1; }
-  50% { opacity: 0.5; }
-  80% { opacity: 0.2; }
-  100% { opacity: 0; }
 }
 
 .footer-iframe {

@@ -38,18 +38,6 @@
   }  
 }
 
-@keyframes moveBox {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -2.5em, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    transition: transform 2s ease, opacity 2s ease;
-  }
-}
-
 // Header  in globals
 
 main {
@@ -79,11 +67,8 @@ main {
         font-family: inherit;
         text-align: center;
         padding: 0.4em 0em;
-        background-color: #d2d4da9d;
-        //opacity: 0.6;
-        //box-shadow: 0 0.1em 0.5em 0.1em  #e0e0e0;
+        background-color: transparent;
         border: none;
-        //border: 2px solid #ee07ee;
         border-radius: 4px;
         margin-left: 1vw;
     }
@@ -170,13 +155,12 @@ main {
       }
 
       p.num {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 30px;
+        height: 30px;
         background-color: #7e2ea3ce;
         border-radius: 20px;
         color : white;
-        font-size: 0.8rem;
-        padding: 2px 0 0 8px;
+        padding: 3px 1px 0 8px;
         position:relative;
         left:1%;
         z-index: 1;
@@ -245,6 +229,17 @@ main {
         @include respond-to(large) {
           width: 100%;
         }
+      }
+
+      .nouveau {
+        color:#0b7a50f3;
+        background-color: #88e6c2f3;
+        position: relative;
+        top: calc(-1 * 0.33 * $breakpoint-sm);
+        left: calc(100% - 95px);
+        padding: 5px 10px;
+        border-radius: 5px;
+
       }
 
       .restaurant {

@@ -68,16 +68,6 @@
   }
 }        
 
-.ordre1 {
-  animation: sildeIn 2s ease;
-}
-.ordre2 {
-  animation: slideIn 4s ease;
-}
-.ordre3 {
-  animation: slideIn 7s ease;
-}
-
 $color-light: white;
 $color-brand: #2196F3;
 $color-font: rgba(black, .54);
@@ -116,6 +106,16 @@ main {
     @include responsive-image(20rem, 20rem, 30rem);
   }
 
+  .ordre1 {
+    animation: slideIn 3s ease-in;
+  }
+  .ordre2 {
+    animation: slideIn 4s ease-in;
+  }
+  .ordre3 {
+    animation: slideIn 6s ease-in;
+  }
+  
   .order-button {
     max-width: 800px;
     display: flex;
@@ -277,16 +277,6 @@ main {
   }
 
   @include responsive-checked-hover;
-
-  //.choix// {
-    //background-color: white ;
-    //border-radius: 20px;
-    //padding : 0px 5px;
-    //margin : 8px 0;
-    //width: 100%;
-    //overflow: hidden;
-
-  //}
 
   .choix {
     //display: inline-block;

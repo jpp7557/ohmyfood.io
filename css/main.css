@@ -15,12 +15,18 @@ h1, h2 {
     opacity: 0;
     transform: translate3d(0, 10px, 0) translate3d(0, 0%, 0);
   }
+  60% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.5;
+  }
   100% {
     opacity: 1;
   }
 }
 .slide-in {
-  animation: slideIn 5s ease-in forwards;
+  animation: slideIn 5s ease-out forwards;
 }
 
 .fade-in-out {
@@ -46,7 +52,7 @@ header {
   flex-direction: row;
   justify-content: left;
   margin: 0.5rem 0 0 0;
-  padding: 2.5vw 0 0.625vw 2.5vw;
+  padding: 2.5vw 0 2.5vw 2.5vw;
   border: none;
 }
 header .logo {
@@ -58,6 +64,7 @@ header .logo img {
   width: 10rem;
   left: calc((100vw - 10rem) / 2);
   height: auto;
+  padding-bottom: 10px;
 }
 @media (min-width: 1000px) {
   header .logo img {
@@ -100,6 +107,11 @@ body {
   top: -8px;
   left: -5vw;
   padding: 0 2px;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1px transparent; /* Outline color */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px black; /* Outline color */
 }
 @media (min-width: 1000px) {
@@ -108,13 +120,34 @@ body {
   }
 }
 
+@keyframes gradientAnimation {
+  0% {
+    background: #f53cd6;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px transparent; /* Outline color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  50% {
+    background: #770477;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px transparent; /* Outline color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background: linear-gradient(to bottom, #770477, #f53cd6);
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px transparent; /* Outline color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 .heartbox:hover .heart-icon2 {
-  background: linear-gradient(to bottom, #770477, #f53cd6);
-  background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 1px transparent; /* Outline color */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 2s ease-in-out forwards;
 }
 
 /* HTML: <div class="loader"></div> */
@@ -146,34 +179,6 @@ body {
   opacity: 0;
 }
 
-@keyframes apparition {
-  0% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  80% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes disparition {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  80% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 .footer-iframe {
   padding: 0;
   margin: 0;
@@ -201,12 +206,18 @@ h1, h2 {
     opacity: 0;
     transform: translate3d(0, 10px, 0) translate3d(0, 0%, 0);
   }
+  60% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.5;
+  }
   100% {
     opacity: 1;
   }
 }
 .slide-in {
-  animation: slideIn 5s ease-in forwards;
+  animation: slideIn 5s ease-out forwards;
 }
 
 .fade-in-out {
@@ -232,7 +243,7 @@ header {
   flex-direction: row;
   justify-content: left;
   margin: 0.5rem 0 0 0;
-  padding: 2.5vw 0 0.625vw 2.5vw;
+  padding: 2.5vw 0 2.5vw 2.5vw;
   border: none;
 }
 header .logo {
@@ -244,6 +255,7 @@ header .logo img {
   width: 10rem;
   left: calc((100vw - 10rem) / 2);
   height: auto;
+  padding-bottom: 10px;
 }
 @media (min-width: 1000px) {
   header .logo img {
@@ -286,6 +298,11 @@ body {
   top: -8px;
   left: -5vw;
   padding: 0 2px;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1px transparent; /* Outline color */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px black; /* Outline color */
 }
 @media (min-width: 1000px) {
@@ -294,13 +311,34 @@ body {
   }
 }
 
+@keyframes gradientAnimation {
+  0% {
+    background: #f53cd6;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px transparent; /* Outline color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  50% {
+    background: #770477;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px transparent; /* Outline color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background: linear-gradient(to bottom, #770477, #f53cd6);
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px transparent; /* Outline color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 .heartbox:hover .heart-icon2 {
-  background: linear-gradient(to bottom, #770477, #f53cd6);
-  background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 1px transparent; /* Outline color */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 2s ease-in-out forwards;
 }
 
 /* HTML: <div class="loader"></div> */
@@ -332,34 +370,6 @@ body {
   opacity: 0;
 }
 
-@keyframes apparition {
-  0% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  80% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes disparition {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  80% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 .footer-iframe {
   padding: 0;
   margin: 0;
@@ -378,7 +388,7 @@ html {
 }
 
 .footer-style {
-  background-color: #707070;
+  background-color: #3a3939;
   color: white;
   padding: 2.5vw 10vw 2.5vw 10vw;
   text-align: left;
@@ -386,6 +396,7 @@ html {
 .footer-style img {
   height: 1.5rem;
   filter: invert(100%);
+  z-index: 100;
 }
 .footer-style .f-icntext {
   display: flex;
@@ -413,12 +424,12 @@ html {
     gap: 1rem;
   }
   .footer-style img {
-    height: 1.2rem;
+    height: 1.3rem;
     position: absolute;
     right: 3rem;
   }
   .footer-style p, .footer-style h3.titre, .footer-style .f-elem {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     padding: 0;
     margin: 0;
   }
@@ -427,17 +438,6 @@ html {
   }
 }
 
-@keyframes moveBox {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -2.5em, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    transition: transform 2s ease, opacity 2s ease;
-  }
-}
 main {
   max-width: 1440px;
   margin: 0 auto;
@@ -466,7 +466,7 @@ main .localite-container .input {
   font-family: inherit;
   text-align: center;
   padding: 0.4em 0em;
-  background-color: rgba(210, 212, 218, 0.6156862745);
+  background-color: transparent;
   border: none;
   border-radius: 4px;
   margin-left: 1vw;
@@ -543,13 +543,12 @@ main .fonctionnement .les-etapes .etape {
   }
 }
 main .fonctionnement .les-etapes p.num {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 30px;
+  height: 30px;
   background-color: rgba(126, 46, 163, 0.8078431373);
   border-radius: 20px;
   color: white;
-  font-size: 0.8rem;
-  padding: 2px 0 0 8px;
+  padding: 3px 1px 0 8px;
   position: relative;
   left: 1%;
   z-index: 1;
@@ -652,6 +651,15 @@ main .sec-restaurants .groupe-restaurants img {
   main .sec-restaurants .groupe-restaurants img {
     width: 100%;
   }
+}
+main .sec-restaurants .groupe-restaurants .nouveau {
+  color: rgba(11, 122, 80, 0.9529411765);
+  background-color: rgba(136, 230, 194, 0.9529411765);
+  position: relative;
+  top: -198px;
+  left: calc(100% - 95px);
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 main .sec-restaurants .groupe-restaurants .restaurant {
   display: flex;
